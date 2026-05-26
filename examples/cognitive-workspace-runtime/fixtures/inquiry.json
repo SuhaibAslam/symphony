@@ -1,0 +1,33 @@
+{
+  "id": "inq-med-device-onboarding",
+  "title": "Design a safer onboarding experience for a home-care medical device",
+  "domain": "healthcare-design",
+  "prompt": "Explore onboarding concepts that help patients and clinicians build confidence during first-week device setup.",
+  "stakeholders": [
+    "patient",
+    "caregiver",
+    "clinician",
+    "support team",
+    "compliance reviewer"
+  ],
+  "tensions": [
+    {
+      "id": "ten-001",
+      "summary": "Patients need reassurance, while clinicians need fewer support escalations.",
+      "preserve_reason": "Optimizing only one side can make the system less trustworthy.",
+      "tags": ["patient-trust", "clinician-load"]
+    },
+    {
+      "id": "ten-002",
+      "summary": "A simple first-run experience must still surface safety-critical warnings.",
+      "preserve_reason": "Safety information cannot be hidden simply to reduce friction.",
+      "tags": ["simplicity", "safety"]
+    },
+    {
+      "id": "ten-003",
+      "summary": "Personalization could improve confidence but may create compliance review burden.",
+      "preserve_reason": "The concept space should retain both trust and governance constraints.",
+      "tags": ["personalization", "compliance"]
+    }
+  ]
+}

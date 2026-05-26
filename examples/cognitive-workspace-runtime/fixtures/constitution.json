@@ -1,0 +1,44 @@
+{
+  "id": "healthcare-design-cognition-v1",
+  "name": "Healthcare Design Cognitive Workspace",
+  "memory": {
+    "preserve": [
+      "decisions",
+      "rejected_directions",
+      "tensions",
+      "open_questions",
+      "known_risks",
+      "evidence",
+      "next_actions"
+    ]
+  },
+  "archetypes": [
+    {
+      "id": "explorer",
+      "purpose": "Expand the problem representation without forcing convergence."
+    },
+    {
+      "id": "critic",
+      "purpose": "Surface contradictions, risks, and stakeholder tensions."
+    },
+    {
+      "id": "synthesizer",
+      "purpose": "Stabilize decisions and prepare continuation context."
+    }
+  ],
+  "constraints": {
+    "avoid": [
+      "premature_convergence",
+      "generic_solution_patterns",
+      "hiding_unresolved_tension"
+    ]
+  },
+  "reflection": {
+    "cadence": [
+      "after_major_concept",
+      "after_stakeholder_conflict",
+      "before_human_handoff"
+    ],
+    "preserve_ambiguity": true
+  }
+}

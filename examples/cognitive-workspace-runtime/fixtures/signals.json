@@ -1,0 +1,61 @@
+{
+  "observed_at": "2026-05-26T20:30:00Z",
+  "observations": [
+    {
+      "id": "ev-001",
+      "summary": "Patients often abandon setup when safety language appears before they understand the task.",
+      "source": "simulated interview synthesis",
+      "confidence": "medium",
+      "tags": ["patient-trust", "simplicity", "safety"]
+    },
+    {
+      "id": "ev-002",
+      "summary": "Clinicians want onboarding to reduce repeated support calls during the first week.",
+      "source": "simulated stakeholder review",
+      "confidence": "high",
+      "tags": ["clinician-load"]
+    },
+    {
+      "id": "ev-003",
+      "summary": "Compliance reviewers prefer reusable language blocks over generated custom warnings.",
+      "source": "simulated governance note",
+      "confidence": "medium",
+      "tags": ["compliance", "personalization"]
+    }
+  ],
+  "rejected_directions": [
+    {
+      "id": "rej-001",
+      "summary": "Avoid a fully personalized warning generator.",
+      "reason": "It increases compliance review burden and makes audit trails harder."
+    },
+    {
+      "id": "rej-002",
+      "summary": "Avoid burying safety warnings behind optional help links.",
+      "reason": "It reduces friction by hiding information that should remain visible."
+    }
+  ],
+  "open_questions": [
+    {
+      "id": "q-001",
+      "question": "Which warnings must appear before setup begins, and which can appear contextually?",
+      "owner": "compliance reviewer",
+      "linked_tensions": ["ten-002"]
+    },
+    {
+      "id": "q-002",
+      "question": "What support escalation data would validate that onboarding actually reduces clinician load?",
+      "owner": "support team",
+      "linked_tensions": ["ten-001"]
+    }
+  ],
+  "risks": [
+    {
+      "id": "risk-001",
+      "summary": "A reassuring experience could accidentally soften safety-critical language.",
+      "mitigation": "Keep approved warnings intact while changing sequencing and explanation.",
+      "severity": "high",
+      "linked_tensions": ["ten-002"]
+    }
+  ]
+}
