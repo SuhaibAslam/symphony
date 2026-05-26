@@ -1,33 +1,33 @@
 {
-  "id": "inq-med-device-onboarding",
-  "title": "Design a safer onboarding experience for a home-care medical device",
-  "domain": "healthcare-design",
-  "prompt": "Explore onboarding concepts that help patients and clinicians build confidence during first-week device setup.",
+  "id": "inq-product-onboarding",
+  "title": "Design a clearer onboarding experience for a complex product",
+  "domain": "product-design",
+  "prompt": "Explore onboarding concepts that help new users build confidence during the first week without creating extra support load.",
   "stakeholders": [
-    "patient",
-    "caregiver",
-    "clinician",
+    "new user",
+    "power user",
+    "operations lead",
     "support team",
-    "compliance reviewer"
+    "policy reviewer"
   ],
   "tensions": [
     {
       "id": "ten-001",
-      "summary": "Patients need reassurance, while clinicians need fewer support escalations.",
-      "preserve_reason": "Optimizing only one side can make the system less trustworthy.",
-      "tags": ["patient-trust", "clinician-load"]
+      "summary": "New users need reassurance, while the support team needs fewer repeated escalations.",
+      "preserve_reason": "Optimizing only one side can make the system less useful.",
+      "tags": ["user-confidence", "support-load"]
     },
     {
       "id": "ten-002",
-      "summary": "A simple first-run experience must still surface safety-critical warnings.",
-      "preserve_reason": "Safety information needs to stay visible while friction gets reduced.",
-      "tags": ["simplicity", "safety"]
+      "summary": "A simple first-run experience still needs to surface important policy constraints.",
+      "preserve_reason": "Policy constraints need to stay visible while friction gets reduced.",
+      "tags": ["simplicity", "policy"]
     },
     {
       "id": "ten-003",
-      "summary": "Personalization could improve confidence but may create compliance review burden.",
-      "preserve_reason": "The concept space should retain both trust and governance constraints.",
-      "tags": ["personalization", "compliance"]
+      "summary": "Personalization could improve confidence but may create review overhead.",
+      "preserve_reason": "The concept space should retain both user confidence and governance constraints.",
+      "tags": ["personalization", "governance"]
     }
   ]
 }

@@ -1,22 +1,22 @@
-# Case Study: Home-Care Device Onboarding
+# Case Study: Complex Product Onboarding
 
 This case study follows one inquiry through the demo.
 
 ## Starting Point
 
-The input is a healthcare design inquiry:
+The input is a product design inquiry:
 
 ```text
-Design a safer onboarding experience for a home-care medical device.
+Design a clearer onboarding experience for a complex product.
 ```
 
 The inquiry has 5 stakeholders:
 
-- patient
-- caregiver
-- clinician
+- new user
+- power user
+- operations lead
 - support team
-- compliance reviewer
+- policy reviewer
 
 It also has 3 tensions baked into the brief. The runtime keeps those tensions visible throughout
 the pass.

@@ -155,7 +155,7 @@ function decide(inquiry, signals, tensions, priorDecisions) {
   decisions.push({
     id: "dec-001",
     summary: "Preserve a dual-track concept space instead of forcing a single direction immediately.",
-    rationale: "The strongest signals favor patient trust and clinician efficiency, but the active tensions show that premature convergence would hide important tradeoffs.",
+    rationale: "The strongest signals favor user confidence and support efficiency, but the active tensions show that premature convergence would hide important tradeoffs.",
     linked_tensions: tensions.map((tension) => tension.id),
     at: signals.observed_at
   });

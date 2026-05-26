@@ -3,48 +3,48 @@
   "observations": [
     {
       "id": "ev-001",
-      "summary": "Patients often abandon setup when safety language appears before they understand the task.",
+      "summary": "New users often abandon setup when policy language appears before they understand the task.",
       "source": "simulated interview synthesis",
       "confidence": "medium",
-      "tags": ["patient-trust", "simplicity", "safety"]
+      "tags": ["user-confidence", "simplicity", "policy"]
     },
     {
       "id": "ev-002",
-      "summary": "Clinicians want onboarding to reduce repeated support calls during the first week.",
+      "summary": "Support teams want onboarding to reduce repeated escalation during the first week.",
       "source": "simulated stakeholder review",
       "confidence": "high",
-      "tags": ["clinician-load"]
+      "tags": ["support-load"]
     },
     {
       "id": "ev-003",
-      "summary": "Compliance reviewers prefer reusable language blocks over generated custom warnings.",
+      "summary": "Policy reviewers prefer reusable language blocks over generated custom guidance.",
       "source": "simulated governance note",
       "confidence": "medium",
-      "tags": ["compliance", "personalization"]
+      "tags": ["governance", "personalization"]
     }
   ],
   "rejected_directions": [
     {
       "id": "rej-001",
-      "summary": "Avoid a fully personalized warning generator.",
-      "reason": "It increases compliance review burden and makes audit trails harder."
+      "summary": "Avoid a fully personalized policy guidance generator.",
+      "reason": "It increases review burden and makes audit trails harder."
     },
     {
       "id": "rej-002",
-      "summary": "Avoid burying safety warnings behind optional help links.",
-      "reason": "It reduces friction by hiding information that should remain visible."
+      "summary": "Avoid burying important constraints behind optional help links.",
+      "reason": "It reduces friction by hiding information that should stay visible."
     }
   ],
   "open_questions": [
     {
       "id": "q-001",
-      "question": "Which warnings must appear before setup begins, and which can appear contextually?",
-      "owner": "compliance reviewer",
+      "question": "Which constraints must appear before setup begins, and which can appear contextually?",
+      "owner": "policy reviewer",
       "linked_tensions": ["ten-002"]
     },
     {
       "id": "q-002",
-      "question": "What support escalation data would validate that onboarding actually reduces clinician load?",
+      "question": "What support escalation data would validate that onboarding actually reduces repeated support load?",
       "owner": "support team",
       "linked_tensions": ["ten-001"]
     }
@@ -52,8 +52,8 @@
   "risks": [
     {
       "id": "risk-001",
-      "summary": "A reassuring experience could accidentally soften safety-critical language.",
-      "mitigation": "Keep approved warnings intact while changing sequencing and explanation.",
+      "summary": "A reassuring experience could accidentally soften important policy language.",
+      "mitigation": "Keep approved language intact while changing sequencing and explanation.",
       "severity": "high",
       "linked_tensions": ["ten-002"]
     }

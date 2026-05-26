@@ -1,6 +1,6 @@
 {
-  "id": "healthcare-design-cognition-v1",
-  "name": "Healthcare Design Scaffolding Runtime",
+  "id": "cognitive-scaffolding-v1",
+  "name": "Cognitive Scaffolding Runtime",
   "memory": {
     "preserve": [
       "decisions",

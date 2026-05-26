@@ -3,7 +3,7 @@
 A small, dependency-free demo for cumulative reasoning inside a persistent Symphony-style
 workspace.
 
-The demo runs a healthcare design inquiry through a tiny state machine. It writes a compact state
+The demo runs a product onboarding inquiry through a tiny state machine. It writes a compact state
 file, a rationale graph, a reflection report, a continuation prompt, and a run summary.
 
 Everything is local. No model call, no API key, no database, no service setup.
@@ -56,6 +56,10 @@ Generated artifacts:
 
 For the full walkthrough, read `CASE_STUDY.md`.
 
+For the state contract, read `SPEC.md`.
+
+For guidance on making your own version, read `ADAPT.md`.
+
 ## Example Output
 
 ```text
@@ -100,6 +104,8 @@ node examples/cognitive-scaffolding-runtime/runtime.mjs --reset
 examples/cognitive-scaffolding-runtime/
   README.md
   CASE_STUDY.md
+  SPEC.md
+  ADAPT.md
   runtime.mjs
   fixtures/
     constitution.json
@@ -121,6 +127,18 @@ examples/cognitive-scaffolding-runtime/
 | Retry | continuation from preserved state |
 | Observability | rationale graph, reflection report, run summary |
 | Human review | explicit judgment over unresolved questions |
+
+## State Model
+
+The runtime writes 5 artifacts:
+
+- `COGNITIVE_STATE.json`: compact state for the next run
+- `RATIONALE_GRAPH.json`: evidence, decisions, tensions, questions, and risks as nodes and edges
+- `REFLECTION_REPORT.md`: human-readable review surface
+- `CONTINUATION_PROMPT.md`: warm-start prompt for a later run
+- `RUN_SUMMARY.json`: small operational summary
+
+The generated files are ignored by git. Run the demo to regenerate them.
 
 ## What The Demo Produces
 
