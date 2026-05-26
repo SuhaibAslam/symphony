@@ -1,0 +1,71 @@
+{
+  "observed_at": "2026-05-20T18:30:00Z",
+  "summary": "The first run chose URL query parameters as the filter persistence boundary and found that empty filtered states need explicit UI handling before merge.",
+  "decisions": [
+    {
+      "id": "dec-001",
+      "summary": "Use URL query parameters as the persistence boundary for dashboard filters.",
+      "rationale": "This keeps filtered views shareable and preserves state across refreshes.",
+      "at": "2026-05-20T17:45:00Z"
+    }
+  ],
+  "rejected_directions": [
+    {
+      "id": "rej-001",
+      "summary": "Do not keep filter state only in local component state.",
+      "reason": "Refreshes and shared links would lose the selected filter context.",
+      "at": "2026-05-20T17:40:00Z"
+    }
+  ],
+  "open_questions": [
+    {
+      "id": "q-001",
+      "question": "Should archived projects be included by default when no filter is selected?",
+      "owner": "human-review",
+      "status": "open"
+    }
+  ],
+  "known_risks": [
+    {
+      "id": "risk-001",
+      "summary": "Filter combinations can produce an empty list that currently looks like a loading failure.",
+      "mitigation": "Add explicit empty-state copy and a reset control.",
+      "severity": "medium"
+    }
+  ],
+  "failed_attempts": [
+    {
+      "id": "fail-001",
+      "summary": "A fixture gap blocked the archived-project assertion.",
+      "recovery": "Add fixture coverage before asserting archived-project behavior.",
+      "at": "2026-05-20T18:05:00Z"
+    }
+  ],
+  "validation": [
+    {
+      "id": "val-001",
+      "command": "mix test test/dashboard/filter_test.exs",
+      "result": "failed",
+      "summary": "Fixture gap blocks the archived-project assertion."
+    }
+  ],
+  "next_actions": [
+    {
+      "id": "next-001",
+      "summary": "Add frontend empty-state handling for zero-result filters.",
+      "priority": "high"
+    },
+    {
+      "id": "next-002",
+      "summary": "Extend dashboard fixtures to cover archived projects.",
+      "priority": "medium"
+    }
+  ],
+  "handoff_notes": [
+    {
+      "id": "handoff-001",
+      "summary": "Reviewer should decide the default archived-project behavior before merge.",
+      "audience": "human-review"
+    }
+  ]
+}
