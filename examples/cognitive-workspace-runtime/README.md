@@ -39,6 +39,8 @@ Generated artifacts:
 - `CONTINUATION_PROMPT.md`
 - `RUN_SUMMARY.json`
 
+For a narrative walkthrough of the sample inquiry, see `CASE_STUDY.md`.
+
 Example terminal output:
 
 ```text
@@ -56,6 +58,19 @@ Key results:
 - 3 tension(s) preserved
 - 5 open question(s) preserved
 - 28 rationale graph edge(s)
+```
+
+Excerpt from the generated reflection report:
+
+```text
+Do not treat unresolved tension as a failure. In this workspace, preserved tension is a
+governance signal: it marks where a future run or human reviewer needs explicit judgment.
+```
+
+Excerpt from the generated continuation prompt:
+
+```text
+Run a focused review of the active tensions before selecting a primary concept direction.
 ```
 
 Reset generated output:
