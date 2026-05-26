@@ -12,7 +12,7 @@ const files = {
   constitution: path.join(fixturePath, "constitution.json"),
   inquiry: path.join(fixturePath, "inquiry.json"),
   signals: path.join(fixturePath, "signals.json"),
-  memory: path.join(workspacePath, "WORKSPACE_MEMORY.json"),
+  memory: path.join(workspacePath, "COGNITIVE_STATE.json"),
   graph: path.join(workspacePath, "RATIONALE_GRAPH.json"),
   reflection: path.join(workspacePath, "REFLECTION_REPORT.md"),
   continuation: path.join(workspacePath, "CONTINUATION_PROMPT.md"),
@@ -41,7 +41,7 @@ writeTextAtomic(files.reflection, renderReflectionReport(pass));
 writeTextAtomic(files.continuation, renderContinuationPrompt(pass));
 writeJsonAtomic(files.summary, pass.summary);
 
-console.log("Cognitive workspace pass complete");
+console.log("Cognitive scaffolding pass complete");
 console.log("");
 console.log("Generated artifacts:");
 for (const file of [files.memory, files.graph, files.reflection, files.continuation, files.summary]) {
@@ -91,7 +91,7 @@ function runCognitionPass({ constitution, inquiry, signals, priorMemory }) {
     next_actions: nextActions,
     reflection_policy: constitution.reflection,
     metadata: {
-      producer: "cognitive-workspace-runtime-demo",
+      producer: "cognitive-scaffolding-runtime-demo",
       prior_memory_loaded: Boolean(priorMemory)
     }
   };
@@ -99,7 +99,7 @@ function runCognitionPass({ constitution, inquiry, signals, priorMemory }) {
   const summary = {
     inquiry_id: inquiry.id,
     generated_at: signals.observed_at,
-    memory_path: "generated-workspace/WORKSPACE_MEMORY.json",
+    memory_path: "generated-workspace/COGNITIVE_STATE.json",
     graph_path: "generated-workspace/RATIONALE_GRAPH.json",
     reflection_path: "generated-workspace/REFLECTION_REPORT.md",
     continuation_path: "generated-workspace/CONTINUATION_PROMPT.md",
@@ -285,7 +285,7 @@ function buildRationaleGraph({ inquiry, evidence, tensions, decisions, rejectedD
 
 function summarize({ inquiry, decisions, tensions, openQuestions }) {
   return [
-    `${inquiry.title} is being held as a bounded cognitive workspace rather than a one-shot task.`,
+    `${inquiry.title} is being held as a bounded reasoning workspace with preserved state.`,
     `${decisions.length} decision(s) are stabilized, ${tensions.length} tension(s) remain visible, and ${openQuestions.length} question(s) need review before convergence.`
   ].join(" ");
 }
@@ -315,8 +315,8 @@ function renderReflectionReport(pass) {
     `- Edges: ${graph.edges.length}`,
     "",
     "## Reflection",
-    "Do not treat unresolved tension as a failure. In this workspace, preserved tension is a",
-    "governance signal: it marks where a future run or human reviewer needs explicit judgment."
+    "Preserved tension is a governance signal. It marks where a future run or human reviewer needs",
+    "explicit judgment."
   ].join("\n");
 }
 
@@ -324,10 +324,10 @@ function renderContinuationPrompt(pass) {
   const { memory } = pass;
 
   return [
-    `Continue the cognitive workspace for: ${memory.inquiry.title}`,
+    `Continue the reasoning workspace for: ${memory.inquiry.title}`,
     "",
-    "Use the preserved workspace state below. Do not restart from the original brief unless new",
-    "evidence makes prior state invalid.",
+    "Use the preserved workspace state below. Carry forward prior decisions unless new evidence",
+    "makes them invalid.",
     "",
     "Summary:",
     memory.summary,

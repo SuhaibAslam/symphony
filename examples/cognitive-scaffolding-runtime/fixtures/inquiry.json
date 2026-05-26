@@ -20,7 +20,7 @@
     {
       "id": "ten-002",
       "summary": "A simple first-run experience must still surface safety-critical warnings.",
-      "preserve_reason": "Safety information cannot be hidden simply to reduce friction.",
+      "preserve_reason": "Safety information needs to stay visible while friction gets reduced.",
       "tags": ["simplicity", "safety"]
     },
     {

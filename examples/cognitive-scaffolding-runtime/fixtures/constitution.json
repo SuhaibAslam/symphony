@@ -1,6 +1,6 @@
 {
   "id": "healthcare-design-cognition-v1",
-  "name": "Healthcare Design Cognitive Workspace",
+  "name": "Healthcare Design Scaffolding Runtime",
   "memory": {
     "preserve": [
       "decisions",
