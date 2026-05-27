@@ -169,6 +169,29 @@ the work is ready.
 See [INTEGRATE.md](examples/cognitive-harness/INTEGRATE.md) for a practical repository layout and
 lifecycle wiring.
 
+## Maintainer Review Path
+
+If you are reading this as a Symphony or Codex maintainer, the fastest review path is:
+
+1. Open [examples/cognitive-harness/README.md](examples/cognitive-harness/README.md) to understand
+   the runnable slice.
+2. Inspect [sample-output/](examples/cognitive-harness/sample-output/) to see the generated review
+   surface before running anything locally.
+3. Read [INTEGRATE.md](examples/cognitive-harness/INTEGRATE.md) to judge where the layer could
+   attach to real workspace lifecycle events.
+4. Read [SPEC.md](examples/cognitive-harness/SPEC.md) if the artifact contract feels worth
+   standardizing.
+
+The branch can be split into smaller upstreamable pieces:
+
+- a docs example for cognition-shaped workspaces
+- JSON schemas for state and rationale graph artifacts
+- lifecycle hook guidance for retry, failure, review, and continuation
+- a reviewer-facing rationale graph view
+- a small adapter that turns real run events into `signals.json`
+
+That lets the idea move forward as reviewable patches instead of one large proposal.
+
 ## Future Development
 
 The current branch is a working slice. Useful next steps:
