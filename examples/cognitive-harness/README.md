@@ -9,42 +9,42 @@ Everything is local. It requires zero model calls, API keys, databases, or servi
 
 ```mermaid
 flowchart TB
-    inquiry["fixtures/inquiry.json<br/>Problem, stakeholders, tensions"]
-    constitution["fixtures/constitution.json<br/>Policy, archetypes, constraints"]
-    signals["fixtures/signals.json<br/>Evidence, rejected directions, risks"]
+    n_inquiry_file["fixtures/inquiry.json<br/>Problem, stakeholders, tensions"]
+    n_constitution_file["fixtures/constitution.json<br/>Policy, archetypes, constraints"]
+    n_signals_file["fixtures/signals.json<br/>Evidence, rejected directions, risks"]
 
-    runtime["runtime.mjs<br/>Deterministic local pass"]
+    n_runtime["runtime.mjs<br/>Deterministic local pass"]
 
-    state["COGNITIVE_STATE.json<br/>What the next run should preserve"]
-    graph["RATIONALE_GRAPH.json<br/>How evidence and decisions connect"]
-    report["REFLECTION_REPORT.md<br/>What a reviewer should inspect"]
-    prompt["CONTINUATION_PROMPT.md<br/>Where the next run should begin"]
-    summary["RUN_SUMMARY.json<br/>Counts and generated paths"]
+    n_state_file["COGNITIVE_STATE.json<br/>What the next run should preserve"]
+    n_rationale_file["RATIONALE_GRAPH.json<br/>How evidence and decisions connect"]
+    n_report_file["REFLECTION_REPORT.md<br/>What a reviewer should inspect"]
+    n_prompt_file["CONTINUATION_PROMPT.md<br/>Where the next run should begin"]
+    n_summary_file["RUN_SUMMARY.json<br/>Counts and generated paths"]
 
-    inquiry --> runtime
-    constitution --> runtime
-    signals --> runtime
+    n_inquiry_file --> n_runtime
+    n_constitution_file --> n_runtime
+    n_signals_file --> n_runtime
 
-    runtime --> state
-    runtime --> graph
-    runtime --> report
-    runtime --> prompt
-    runtime --> summary
+    n_runtime --> n_state_file
+    n_runtime --> n_rationale_file
+    n_runtime --> n_report_file
+    n_runtime --> n_prompt_file
+    n_runtime --> n_summary_file
 
-    state --> prompt
-    graph --> report
-    report --> reviewer["Human reviewer<br/>Checks unresolved judgment"]
-    prompt --> next["Retry or continuation run<br/>Starts warm"]
+    n_state_file --> n_prompt_file
+    n_rationale_file --> n_report_file
+    n_report_file --> n_reviewer["Human reviewer<br/>Checks unresolved judgment"]
+    n_prompt_file --> n_next_run["Retry or continuation run<br/>Starts warm"]
 
-    classDef input fill:#eef6ff,stroke:#2563eb,color:#172554,stroke-width:1px
-    classDef runner fill:#f5f3ff,stroke:#7c3aed,color:#2e1065,stroke-width:1px
-    classDef artifact fill:#ecfdf5,stroke:#059669,color:#064e3b,stroke-width:1px
-    classDef consumer fill:#fff7ed,stroke:#ea580c,color:#7c2d12,stroke-width:1px
+    classDef c_input fill:#eef6ff,stroke:#2563eb,color:#172554,stroke-width:1px
+    classDef c_runner fill:#f5f3ff,stroke:#7c3aed,color:#2e1065,stroke-width:1px
+    classDef c_artifact fill:#ecfdf5,stroke:#059669,color:#064e3b,stroke-width:1px
+    classDef c_consumer fill:#fff7ed,stroke:#ea580c,color:#7c2d12,stroke-width:1px
 
-    class inquiry,constitution,signals input
-    class runtime runner
-    class state,graph,report,prompt,summary artifact
-    class reviewer,next consumer
+    class n_inquiry_file,n_constitution_file,n_signals_file c_input
+    class n_runtime c_runner
+    class n_state_file,n_rationale_file,n_report_file,n_prompt_file,n_summary_file c_artifact
+    class n_reviewer,n_next_run c_consumer
 ```
 
 ## Why This Exists
@@ -112,32 +112,32 @@ For generated artifacts from one run, read `sample-output/`.
 
 ```mermaid
 flowchart LR
-    subgraph generated["Generated artifact bundle"]
-        state["COGNITIVE_STATE.json<br/>2 decisions<br/>3 tensions<br/>5 open questions"]
-        graph["RATIONALE_GRAPH.json<br/>28 edges across evidence, decisions, risks, and questions"]
-        report["REFLECTION_REPORT.md<br/>Review surface for unresolved judgment"]
-        prompt["CONTINUATION_PROMPT.md<br/>Focused restart instructions"]
-        summary["RUN_SUMMARY.json<br/>Operational counts"]
+    subgraph sg_generated["Generated artifact bundle"]
+        n_state_out["COGNITIVE_STATE.json<br/>2 decisions<br/>3 tensions<br/>5 open questions"]
+        n_rationale_out["RATIONALE_GRAPH.json<br/>28 edges across evidence, decisions, risks, and questions"]
+        n_report_out["REFLECTION_REPORT.md<br/>Review surface for unresolved judgment"]
+        n_prompt_out["CONTINUATION_PROMPT.md<br/>Focused restart instructions"]
+        n_summary_out["RUN_SUMMARY.json<br/>Operational counts"]
     end
 
-    state --> reviewer["Reviewer view<br/>What is stable?<br/>What still needs judgment?"]
-    graph --> reviewer
-    report --> reviewer
+    n_state_out --> n_reviewer_view["Reviewer view<br/>What is stable?<br/>What still needs judgment?"]
+    n_rationale_out --> n_reviewer_view
+    n_report_out --> n_reviewer_view
 
-    state --> continuation["Next-run view<br/>What should be preserved?"]
-    prompt --> continuation
-    summary --> continuation
+    n_state_out --> n_continuation_view["Next-run view<br/>What should be preserved?"]
+    n_prompt_out --> n_continuation_view
+    n_summary_out --> n_continuation_view
 
-    reviewer --> decision["Human decision<br/>Accept, revise, or ask for evidence"]
-    continuation --> rerun["Later run<br/>Avoids repeating the same exploration"]
+    n_reviewer_view --> n_human_decision["Human decision<br/>Accept, revise, or ask for evidence"]
+    n_continuation_view --> n_rerun["Later run<br/>Avoids repeating the same exploration"]
 
-    classDef artifact fill:#ecfdf5,stroke:#059669,color:#064e3b,stroke-width:1px
-    classDef review fill:#fff7ed,stroke:#ea580c,color:#7c2d12,stroke-width:1px
-    classDef run fill:#eef6ff,stroke:#2563eb,color:#172554,stroke-width:1px
+    classDef c_artifact fill:#ecfdf5,stroke:#059669,color:#064e3b,stroke-width:1px
+    classDef c_review fill:#fff7ed,stroke:#ea580c,color:#7c2d12,stroke-width:1px
+    classDef c_run fill:#eef6ff,stroke:#2563eb,color:#172554,stroke-width:1px
 
-    class state,graph,report,prompt,summary artifact
-    class reviewer,decision review
-    class continuation,rerun run
+    class n_state_out,n_rationale_out,n_report_out,n_prompt_out,n_summary_out c_artifact
+    class n_reviewer_view,n_human_decision c_review
+    class n_continuation_view,n_rerun c_run
 ```
 
 ## How To Read The Output
