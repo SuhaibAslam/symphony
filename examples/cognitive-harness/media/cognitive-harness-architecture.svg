@@ -1,100 +1,149 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="780" viewBox="0 0 1200 780" role="img" aria-labelledby="title desc">
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="1280" viewBox="0 0 1280 1280" role="img" aria-labelledby="title desc">
   <title id="title">Cognitive Harness architecture</title>
-  <desc id="desc">A layered architecture diagram showing Symphony primitives, Cognitive Harness workspace semantics, generated artifacts, and challenge areas.</desc>
+  <desc id="desc">A professional architecture diagram showing Symphony primitives, Cognitive Harness semantics, generated workspace artifacts, and integration points.</desc>
   <defs>
-    <linearGradient id="paper" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0" stop-color="#fbfaf7"/>
-      <stop offset="1" stop-color="#eef3f7"/>
+    <linearGradient id="background" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#f8fafc"/>
+      <stop offset="1" stop-color="#eef3f8"/>
     </linearGradient>
-    <filter id="shadow" x="-8%" y="-8%" width="116%" height="124%">
-      <feDropShadow dx="0" dy="14" stdDeviation="18" flood-color="#1f2933" flood-opacity="0.13"/>
+    <filter id="softShadow" x="-8%" y="-8%" width="116%" height="124%">
+      <feDropShadow dx="0" dy="18" stdDeviation="20" flood-color="#0f172a" flood-opacity="0.12"/>
     </filter>
+    <marker id="arrow" viewBox="0 0 12 12" refX="10" refY="6" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+      <path d="M2 2 L10 6 L2 10 Z" fill="#64748b"/>
+    </marker>
     <style>
       text { font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif; }
-      .eyebrow { fill: #647181; font-size: 13px; font-weight: 700; letter-spacing: 1.4px; }
-      .title { fill: #111827; font-size: 34px; font-weight: 760; }
-      .subtitle { fill: #4b5563; font-size: 17px; }
-      .panel-title { fill: #111827; font-size: 20px; font-weight: 740; }
-      .label { fill: #253142; font-size: 14px; font-weight: 690; }
-      .body { fill: #46515f; font-size: 13px; }
-      .chip { fill: #374151; font-size: 12px; font-weight: 700; }
+      .eyebrow { fill: #64748b; font-size: 12px; font-weight: 760; letter-spacing: 1.6px; }
+      .title { fill: #0f172a; font-size: 38px; font-weight: 780; }
+      .subtitle { fill: #475569; font-size: 17px; }
+      .section { fill: #0f172a; font-size: 18px; font-weight: 760; }
+      .label { fill: #243244; font-size: 13px; font-weight: 720; }
+      .body { fill: #526173; font-size: 12.5px; }
+      .mono { fill: #223044; font-size: 12px; font-family: "SFMono-Regular", Consolas, "Liberation Mono", monospace; }
+      .darkLabel { fill: #f8fbff; font-size: 13px; font-weight: 720; }
+      .darkBody { fill: #cbd7ea; font-size: 12.5px; }
+      .step { fill: #334155; font-size: 12px; font-weight: 720; }
     </style>
   </defs>
 
-  <rect width="1200" height="780" fill="url(#paper)"/>
-  <rect x="48" y="44" width="1104" height="692" rx="28" fill="#ffffff" stroke="#d9dee5" filter="url(#shadow)"/>
+  <rect width="1280" height="1280" fill="url(#background)"/>
+  <rect x="56" y="48" width="1168" height="1184" rx="30" fill="#ffffff" stroke="#d8e0ea" filter="url(#softShadow)"/>
 
-  <text x="88" y="102" class="eyebrow">SYMPHONY EXTENSION PATTERN</text>
-  <text x="88" y="144" class="title">Cognitive Harness</text>
-  <text x="88" y="176" class="subtitle">A workspace layer for inquiry state, rationale, reflection, and continuation.</text>
+  <text x="96" y="104" class="eyebrow">SYMPHONY EXTENSION PATTERN</text>
+  <text x="96" y="148" class="title">Cognitive Harness</text>
+  <text x="96" y="180" class="subtitle">A workspace layer that preserves reasoning state around agent execution.</text>
 
-  <g transform="translate(88 238)">
-    <rect x="0" y="0" width="286" height="318" rx="18" fill="#f5f7fb" stroke="#cad2de"/>
-    <text x="24" y="44" class="panel-title">Symphony substrate</text>
-    <text x="24" y="74" class="body">Execution primitives already exist.</text>
-    <g transform="translate(24 108)">
-      <rect width="238" height="38" rx="19" fill="#ffffff" stroke="#d9dee5"/>
-      <text x="18" y="24" class="label">Workspace isolation</text>
-      <rect y="52" width="238" height="38" rx="19" fill="#ffffff" stroke="#d9dee5"/>
-      <text x="18" y="76" class="label">Lifecycle hooks</text>
-      <rect y="104" width="238" height="38" rx="19" fill="#ffffff" stroke="#d9dee5"/>
-      <text x="18" y="128" class="label">Retries</text>
-      <rect y="156" width="238" height="38" rx="19" fill="#ffffff" stroke="#d9dee5"/>
-      <text x="18" y="180" class="label">Review artifacts</text>
+  <g transform="translate(96 236)">
+    <rect width="304" height="310" rx="18" fill="#f6f8fb" stroke="#cfd8e4"/>
+    <text x="24" y="42" class="section">1. Execution substrate</text>
+    <text x="24" y="70" class="body">Symphony already gives the run a boundary.</text>
+
+    <g transform="translate(24 104)">
+      <rect width="256" height="42" rx="12" fill="#ffffff" stroke="#d8e0ea"/>
+      <text x="16" y="26" class="label">Workspace isolation</text>
+      <rect y="54" width="256" height="42" rx="12" fill="#ffffff" stroke="#d8e0ea"/>
+      <text x="16" y="80" class="label">Lifecycle hooks</text>
+      <rect y="108" width="256" height="42" rx="12" fill="#ffffff" stroke="#d8e0ea"/>
+      <text x="16" y="134" class="label">Retries and continuation</text>
+      <rect y="162" width="256" height="42" rx="12" fill="#ffffff" stroke="#d8e0ea"/>
+      <text x="16" y="188" class="label">Observable review output</text>
     </g>
   </g>
 
-  <g transform="translate(456 198)">
-    <rect x="0" y="0" width="288" height="410" rx="22" fill="#141b2d"/>
-    <text x="28" y="48" fill="#d9e6ff" font-size="13" font-weight="760" letter-spacing="1.2px">COGNITIVE HARNESS</text>
-    <text x="28" y="86" fill="#ffffff" font-size="24" font-weight="780">Workspace semantics</text>
-    <text x="28" y="120" fill="#b7c4d8" font-size="14">The layer that gives a run</text>
-    <text x="28" y="142" fill="#b7c4d8" font-size="14">structure beyond execution.</text>
-    <g transform="translate(28 178)">
-      <rect width="232" height="40" rx="12" fill="#24314c"/>
-      <text x="16" y="25" fill="#eef4ff" font-size="13" font-weight="700">Bounded inquiry</text>
-      <rect y="54" width="232" height="40" rx="12" fill="#24314c"/>
-      <text x="16" y="79" fill="#eef4ff" font-size="13" font-weight="700">Workspace constitution</text>
-      <rect y="108" width="232" height="40" rx="12" fill="#24314c"/>
-      <text x="16" y="133" fill="#eef4ff" font-size="13" font-weight="700">Reasoning archetypes</text>
-      <rect y="162" width="232" height="40" rx="12" fill="#24314c"/>
-      <text x="16" y="187" fill="#eef4ff" font-size="13" font-weight="700">Reflection policy</text>
+  <path d="M414 391 H470" stroke="#64748b" stroke-width="2.4" marker-end="url(#arrow)" fill="none"/>
+
+  <g transform="translate(488 214)">
+    <rect width="304" height="390" rx="22" fill="#111827"/>
+    <text x="26" y="44" fill="#bfd4ff" font-size="12" font-weight="760" letter-spacing="1.4px">COGNITION LAYER</text>
+    <text x="26" y="84" fill="#ffffff" font-size="25" font-weight="780">Workspace semantics</text>
+    <text x="26" y="116" class="darkBody">The harness shapes what the run</text>
+    <text x="26" y="138" class="darkBody">preserves, questions, and hands off.</text>
+
+    <g transform="translate(26 172)">
+      <rect width="252" height="38" rx="11" fill="#253653"/>
+      <text x="16" y="24" class="darkLabel">Bounded inquiry</text>
+      <rect y="50" width="252" height="38" rx="11" fill="#253653"/>
+      <text x="16" y="74" class="darkLabel">Workspace constitution</text>
+      <rect y="100" width="252" height="38" rx="11" fill="#253653"/>
+      <text x="16" y="124" class="darkLabel">Tensions and decisions</text>
+      <rect y="150" width="252" height="38" rx="11" fill="#253653"/>
+      <text x="16" y="174" class="darkLabel">Reflection policy</text>
     </g>
   </g>
 
-  <g transform="translate(826 238)">
-    <rect x="0" y="0" width="286" height="318" rx="18" fill="#f7f2e8" stroke="#dfcda7"/>
-    <text x="24" y="44" class="panel-title">Generated artifacts</text>
-    <text x="24" y="74" class="body">Concrete files a reviewer can inspect.</text>
-    <g transform="translate(24 108)">
-      <rect width="238" height="38" rx="10" fill="#ffffff" stroke="#dfd2b7"/>
-      <text x="16" y="24" class="label">COGNITIVE_STATE.json</text>
-      <rect y="52" width="238" height="38" rx="10" fill="#ffffff" stroke="#dfd2b7"/>
-      <text x="16" y="76" class="label">RATIONALE_GRAPH.json</text>
-      <rect y="104" width="238" height="38" rx="10" fill="#ffffff" stroke="#dfd2b7"/>
-      <text x="16" y="128" class="label">REFLECTION_REPORT.md</text>
-      <rect y="156" width="238" height="38" rx="10" fill="#ffffff" stroke="#dfd2b7"/>
-      <text x="16" y="180" class="label">CONTINUATION_PROMPT.md</text>
+  <path d="M806 391 H862" stroke="#64748b" stroke-width="2.4" marker-end="url(#arrow)" fill="none"/>
+
+  <g transform="translate(880 236)">
+    <rect width="304" height="310" rx="18" fill="#fff8ed" stroke="#e2c99c"/>
+    <text x="24" y="42" class="section">2. Workspace artifacts</text>
+    <text x="24" y="70" class="body">Concrete state the next run can load.</text>
+
+    <g transform="translate(24 104)">
+      <rect width="256" height="36" rx="10" fill="#ffffff" stroke="#e6d6b8"/>
+      <text x="16" y="23" class="mono">COGNITIVE_STATE.json</text>
+      <rect y="48" width="256" height="36" rx="10" fill="#ffffff" stroke="#e6d6b8"/>
+      <text x="16" y="71" class="mono">RATIONALE_GRAPH.json</text>
+      <rect y="96" width="256" height="36" rx="10" fill="#ffffff" stroke="#e6d6b8"/>
+      <text x="16" y="119" class="mono">REFLECTION_REPORT.md</text>
+      <rect y="144" width="256" height="36" rx="10" fill="#ffffff" stroke="#e6d6b8"/>
+      <text x="16" y="167" class="mono">CONTINUATION_PROMPT.md</text>
     </g>
   </g>
 
-  <path d="M374 397 C402 397 428 397 456 397" stroke="#9aa5b1" stroke-width="2.4" fill="none"/>
-  <path d="M744 397 C772 397 798 397 826 397" stroke="#9aa5b1" stroke-width="2.4" fill="none"/>
+  <g transform="translate(96 612)">
+    <rect width="1088" height="140" rx="18" fill="#f8fafc" stroke="#d8e0ea"/>
+    <text x="24" y="36" class="section">3. Integration path</text>
+    <text x="24" y="66" class="body">The demo reads fixtures. A real harness would replace them with issue text, workflow policy, logs,</text>
+    <text x="24" y="88" class="body">tests, traces, review comments, failed attempts, and agent notes.</text>
 
-  <g transform="translate(88 634)">
-    <rect width="1024" height="72" rx="18" fill="#f8fafc" stroke="#d9dee5"/>
-    <text x="24" y="30" class="label">Challenge areas</text>
-    <g transform="translate(170 20)">
-      <rect width="118" height="32" rx="16" fill="#ffffff" stroke="#d9dee5"/>
-      <text x="24" y="21" class="chip">Continuity</text>
-      <rect x="136" width="142" height="32" rx="16" fill="#ffffff" stroke="#d9dee5"/>
-      <text x="158" y="21" class="chip">Tension tracking</text>
-      <rect x="296" width="136" height="32" rx="16" fill="#ffffff" stroke="#d9dee5"/>
-      <text x="318" y="21" class="chip">Epistemic review</text>
-      <rect x="450" width="104" height="32" rx="16" fill="#ffffff" stroke="#d9dee5"/>
-      <text x="478" y="21" class="chip">Recovery</text>
-      <rect x="572" width="118" height="32" rx="16" fill="#ffffff" stroke="#d9dee5"/>
-      <text x="598" y="21" class="chip">Adaptation</text>
+    <g transform="translate(24 104)">
+      <rect width="92" height="30" rx="15" fill="#ffffff" stroke="#d8e0ea"/>
+      <text x="22" y="20" class="step">create</text>
+      <rect x="108" width="88" height="30" rx="15" fill="#ffffff" stroke="#d8e0ea"/>
+      <text x="130" y="20" class="step">run</text>
+      <rect x="212" width="88" height="30" rx="15" fill="#ffffff" stroke="#d8e0ea"/>
+      <text x="232" y="20" class="step">retry</text>
+      <rect x="316" width="104" height="30" rx="15" fill="#ffffff" stroke="#d8e0ea"/>
+      <text x="338" y="20" class="step">handoff</text>
+      <rect x="436" width="100" height="30" rx="15" fill="#ffffff" stroke="#d8e0ea"/>
+      <text x="458" y="20" class="step">review</text>
+      <rect x="552" width="96" height="30" rx="15" fill="#ffffff" stroke="#d8e0ea"/>
+      <text x="574" y="20" class="step">resume</text>
+    </g>
+  </g>
+
+  <g transform="translate(96 804)">
+    <rect width="520" height="216" rx="18" fill="#edf8f2" stroke="#c7ddcf"/>
+    <text x="24" y="38" class="section">Challenge areas</text>
+    <text x="24" y="66" class="body">The harness is useful when reasoning has durable ambiguity.</text>
+    <g transform="translate(24 96)">
+      <rect width="138" height="34" rx="17" fill="#ffffff" stroke="#c7ddcf"/>
+      <text x="28" y="22" class="step">continuity</text>
+      <rect x="154" width="166" height="34" rx="17" fill="#ffffff" stroke="#c7ddcf"/>
+      <text x="178" y="22" class="step">tension tracking</text>
+      <rect x="336" width="132" height="34" rx="17" fill="#ffffff" stroke="#c7ddcf"/>
+      <text x="358" y="22" class="step">recovery</text>
+      <rect y="50" width="164" height="34" rx="17" fill="#ffffff" stroke="#c7ddcf"/>
+      <text x="24" y="72" class="step">epistemic review</text>
+      <rect x="180" y="50" width="140" height="34" rx="17" fill="#ffffff" stroke="#c7ddcf"/>
+      <text x="210" y="72" class="step">adaptation</text>
+    </g>
+  </g>
+
+  <g transform="translate(664 804)">
+    <rect width="520" height="216" rx="18" fill="#f6f8fb" stroke="#d8e0ea"/>
+    <text x="24" y="38" class="section">What compounds</text>
+    <text x="24" y="66" class="body">The output gives future runs a smaller, sharper starting point.</text>
+    <g transform="translate(24 96)">
+      <rect width="220" height="38" rx="11" fill="#ffffff" stroke="#d8e0ea"/>
+      <text x="16" y="24" class="label">stable decisions</text>
+      <rect x="244" width="220" height="38" rx="11" fill="#ffffff" stroke="#d8e0ea"/>
+      <text x="260" y="24" class="label">rejected directions</text>
+      <rect y="52" width="220" height="38" rx="11" fill="#ffffff" stroke="#d8e0ea"/>
+      <text x="16" y="76" class="label">open questions</text>
+      <rect x="244" y="52" width="220" height="38" rx="11" fill="#ffffff" stroke="#d8e0ea"/>
+      <text x="260" y="76" class="label">known risks</text>
     </g>
   </g>
 </svg>

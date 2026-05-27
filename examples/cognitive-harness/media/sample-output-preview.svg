@@ -1,95 +1,135 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="720" viewBox="0 0 1280 720" role="img" aria-labelledby="title desc">
-  <title id="title">Cognitive Harness sample output</title>
-  <desc id="desc">A preview of generated Cognitive Harness files, graph counts, preserved tensions, and continuation state.</desc>
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="1280" viewBox="0 0 1280 1280" role="img" aria-labelledby="title desc">
+  <title id="title">Cognitive Harness generated output preview</title>
+  <desc id="desc">A polished preview of the generated Cognitive Harness state files, rationale graph counts, review summary, and continuation prompt.</desc>
   <defs>
-    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0" stop-color="#f9fafb"/>
-      <stop offset="1" stop-color="#edf2f7"/>
+    <linearGradient id="background" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#fbfcfe"/>
+      <stop offset="1" stop-color="#edf3f7"/>
     </linearGradient>
-    <filter id="lift" x="-8%" y="-8%" width="116%" height="124%">
-      <feDropShadow dx="0" dy="12" stdDeviation="16" flood-color="#111827" flood-opacity="0.12"/>
+    <filter id="shadow" x="-8%" y="-8%" width="116%" height="124%">
+      <feDropShadow dx="0" dy="16" stdDeviation="20" flood-color="#0f172a" flood-opacity="0.12"/>
     </filter>
     <style>
       text { font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif; }
-      .title { fill: #111827; font-size: 32px; font-weight: 760; }
-      .subtitle { fill: #4b5563; font-size: 16px; }
-      .h { fill: #111827; font-size: 18px; font-weight: 740; }
-      .label { fill: #374151; font-size: 13px; font-weight: 700; }
-      .body { fill: #4b5563; font-size: 13px; }
-      .mono { fill: #223044; font-size: 13px; font-family: "SFMono-Regular", Consolas, "Liberation Mono", monospace; }
-      .num { fill: #111827; font-size: 34px; font-weight: 780; }
+      .eyebrow { fill: #64748b; font-size: 12px; font-weight: 760; letter-spacing: 1.4px; }
+      .title { fill: #0f172a; font-size: 36px; font-weight: 780; }
+      .subtitle { fill: #475569; font-size: 16px; }
+      .section { fill: #0f172a; font-size: 18px; font-weight: 760; }
+      .body { fill: #526173; font-size: 12.5px; }
+      .label { fill: #243244; font-size: 13px; font-weight: 720; }
+      .mono { fill: #253142; font-size: 12px; font-family: "SFMono-Regular", Consolas, "Liberation Mono", monospace; }
+      .number { fill: #0f172a; font-size: 34px; font-weight: 800; }
+      .caption { fill: #64748b; font-size: 12px; font-weight: 700; }
     </style>
   </defs>
 
-  <rect width="1280" height="720" fill="url(#bg)"/>
-  <rect x="52" y="44" width="1176" height="632" rx="28" fill="#ffffff" stroke="#d7dde5" filter="url(#lift)"/>
-  <text x="92" y="100" class="title">Generated workspace state</text>
-  <text x="92" y="130" class="subtitle">One committed run shows the actual handoff surface a future run or reviewer receives.</text>
+  <rect width="1280" height="1280" fill="url(#background)"/>
+  <rect x="56" y="48" width="1168" height="1184" rx="30" fill="#ffffff" stroke="#d8e0ea" filter="url(#shadow)"/>
 
-  <g transform="translate(92 178)">
-    <rect width="338" height="374" rx="18" fill="#f8fafc" stroke="#d9dee5"/>
-    <text x="24" y="42" class="h">Files</text>
-    <text x="24" y="72" class="body">The demo writes a compact, inspectable bundle.</text>
-    <g transform="translate(24 108)">
-      <rect width="290" height="40" rx="10" fill="#ffffff" stroke="#d9dee5"/>
-      <text x="16" y="25" class="mono">COGNITIVE_STATE.json</text>
-      <rect y="54" width="290" height="40" rx="10" fill="#ffffff" stroke="#d9dee5"/>
-      <text x="16" y="79" class="mono">RATIONALE_GRAPH.json</text>
-      <rect y="108" width="290" height="40" rx="10" fill="#ffffff" stroke="#d9dee5"/>
-      <text x="16" y="133" class="mono">REFLECTION_REPORT.md</text>
-      <rect y="162" width="290" height="40" rx="10" fill="#ffffff" stroke="#d9dee5"/>
-      <text x="16" y="187" class="mono">CONTINUATION_PROMPT.md</text>
-      <rect y="216" width="290" height="40" rx="10" fill="#ffffff" stroke="#d9dee5"/>
-      <text x="16" y="241" class="mono">RUN_SUMMARY.json</text>
+  <text x="96" y="104" class="eyebrow">COMMITTED SAMPLE OUTPUT</text>
+  <text x="96" y="148" class="title">Generated workspace state</text>
+  <text x="96" y="180" class="subtitle">One run produces files a reviewer can inspect and a later run can load.</text>
+
+  <g transform="translate(96 232)">
+    <rect width="316" height="330" rx="18" fill="#f6f8fb" stroke="#d8e0ea"/>
+    <text x="24" y="42" class="section">Artifact bundle</text>
+    <text x="24" y="70" class="body">Generated inside the workspace boundary.</text>
+
+    <g transform="translate(24 104)">
+      <rect width="268" height="34" rx="9" fill="#ffffff" stroke="#d8e0ea"/>
+      <text x="14" y="22" class="mono">COGNITIVE_STATE.json</text>
+      <rect y="44" width="268" height="34" rx="9" fill="#ffffff" stroke="#d8e0ea"/>
+      <text x="14" y="66" class="mono">RATIONALE_GRAPH.json</text>
+      <rect y="88" width="268" height="34" rx="9" fill="#ffffff" stroke="#d8e0ea"/>
+      <text x="14" y="110" class="mono">REFLECTION_REPORT.md</text>
+      <rect y="132" width="268" height="34" rx="9" fill="#ffffff" stroke="#d8e0ea"/>
+      <text x="14" y="154" class="mono">CONTINUATION_PROMPT.md</text>
+      <rect y="176" width="268" height="34" rx="9" fill="#ffffff" stroke="#d8e0ea"/>
+      <text x="14" y="198" class="mono">RUN_SUMMARY.json</text>
     </g>
   </g>
 
-  <g transform="translate(470 178)">
-    <rect width="332" height="374" rx="18" fill="#fff8ed" stroke="#e2cfae"/>
-    <text x="24" y="42" class="h">Rationale graph</text>
-    <text x="24" y="72" class="body">Relationships stay machine-readable.</text>
-    <g transform="translate(30 118)">
-      <circle cx="110" cy="40" r="28" fill="#172033"/>
-      <text x="102" y="45" fill="#ffffff" font-size="13" font-weight="800">I</text>
-      <circle cx="42" cy="142" r="24" fill="#44637f"/>
-      <text x="34" y="147" fill="#ffffff" font-size="12" font-weight="800">E</text>
-      <circle cx="174" cy="142" r="24" fill="#8a6a22"/>
-      <text x="166" y="147" fill="#ffffff" font-size="12" font-weight="800">T</text>
-      <circle cx="110" cy="236" r="24" fill="#315f45"/>
-      <text x="102" y="241" fill="#ffffff" font-size="12" font-weight="800">D</text>
-      <path d="M96 64 L56 120" stroke="#9aa5b1" stroke-width="2"/>
-      <path d="M124 64 L160 120" stroke="#9aa5b1" stroke-width="2"/>
-      <path d="M58 160 L92 218" stroke="#9aa5b1" stroke-width="2"/>
-      <path d="M162 160 L126 218" stroke="#9aa5b1" stroke-width="2"/>
-      <text x="228" y="45" class="num">18</text>
-      <text x="228" y="68" class="label">nodes</text>
-      <text x="228" y="136" class="num">28</text>
-      <text x="228" y="159" class="label">edges</text>
+  <g transform="translate(452 232)">
+    <rect width="344" height="330" rx="18" fill="#fff8ed" stroke="#e2c99c"/>
+    <text x="24" y="42" class="section">Rationale graph</text>
+    <text x="24" y="70" class="body">Machine-readable links between evidence and judgment.</text>
+
+    <g transform="translate(42 118)">
+      <path d="M116 38 L58 116" stroke="#94a3b8" stroke-width="2.2"/>
+      <path d="M138 38 L202 116" stroke="#94a3b8" stroke-width="2.2"/>
+      <path d="M60 150 L118 216" stroke="#94a3b8" stroke-width="2.2"/>
+      <path d="M202 150 L140 216" stroke="#94a3b8" stroke-width="2.2"/>
+      <circle cx="128" cy="28" r="30" fill="#111827"/>
+      <text x="122" y="34" fill="#ffffff" font-size="13" font-weight="800">I</text>
+      <circle cx="52" cy="134" r="26" fill="#486983"/>
+      <text x="46" y="140" fill="#ffffff" font-size="13" font-weight="800">E</text>
+      <circle cx="210" cy="134" r="26" fill="#927225"/>
+      <text x="204" y="140" fill="#ffffff" font-size="13" font-weight="800">T</text>
+      <circle cx="128" cy="234" r="26" fill="#2f6b49"/>
+      <text x="122" y="240" fill="#ffffff" font-size="13" font-weight="800">D</text>
+    </g>
+
+    <g transform="translate(244 132)">
+      <text x="0" y="0" class="number">18</text>
+      <text x="2" y="24" class="caption">nodes</text>
+      <text x="0" y="88" class="number">28</text>
+      <text x="2" y="112" class="caption">edges</text>
     </g>
   </g>
 
-  <g transform="translate(842 178)">
-    <rect width="346" height="374" rx="18" fill="#eef7f2" stroke="#c4dccd"/>
-    <text x="24" y="42" class="h">Preserved judgment</text>
-    <text x="24" y="72" class="body">The output keeps unresolved work visible.</text>
-    <g transform="translate(24 112)">
-      <rect width="298" height="52" rx="12" fill="#ffffff" stroke="#c7ddd0"/>
-      <text x="18" y="24" class="label">2 stable decisions</text>
-      <text x="18" y="42" class="body">What can be carried forward</text>
-      <rect y="70" width="298" height="52" rx="12" fill="#ffffff" stroke="#c7ddd0"/>
-      <text x="18" y="94" class="label">3 active tensions</text>
-      <text x="18" y="112" class="body">Tradeoffs to keep visible</text>
-      <rect y="140" width="298" height="52" rx="12" fill="#ffffff" stroke="#c7ddd0"/>
-      <text x="18" y="164" class="label">5 open questions</text>
-      <text x="18" y="182" class="body">What needs review or evidence</text>
-      <rect y="210" width="298" height="52" rx="12" fill="#ffffff" stroke="#c7ddd0"/>
-      <text x="18" y="234" class="label">1 continuation prompt</text>
-      <text x="18" y="252" class="body">Where the next run begins</text>
+  <g transform="translate(836 232)">
+    <rect width="348" height="330" rx="18" fill="#edf8f2" stroke="#c7ddcf"/>
+    <text x="24" y="42" class="section">Review surface</text>
+    <text x="24" y="70" class="body">The report keeps unresolved work visible.</text>
+
+    <g transform="translate(24 104)">
+      <rect width="300" height="44" rx="11" fill="#ffffff" stroke="#c9dfd2"/>
+      <text x="16" y="27" class="label">2 stable decisions</text>
+      <rect y="58" width="300" height="44" rx="11" fill="#ffffff" stroke="#c9dfd2"/>
+      <text x="16" y="85" class="label">3 active tensions</text>
+      <rect y="116" width="300" height="44" rx="11" fill="#ffffff" stroke="#c9dfd2"/>
+      <text x="16" y="143" class="label">5 open questions</text>
+      <rect y="174" width="300" height="44" rx="11" fill="#ffffff" stroke="#c9dfd2"/>
+      <text x="16" y="201" class="label">2 known risks</text>
     </g>
   </g>
 
-  <g transform="translate(92 594)">
-    <rect width="1096" height="42" rx="21" fill="#111827"/>
-    <text x="24" y="27" fill="#f9fafb" font-size="14" font-weight="700">Core claim: the harness preserves the parts of reasoning that raw transcripts and terminal output make expensive to recover.</text>
+  <g transform="translate(96 620)">
+    <rect width="1088" height="112" rx="18" fill="#111827"/>
+    <text x="26" y="34" fill="#bfd4ff" font-size="12" font-weight="760" letter-spacing="1.2px">CONTINUATION PROMPT</text>
+    <text x="26" y="62" fill="#f8fbff" font-size="15" font-weight="700">Run a focused review of the active tensions before selecting a primary concept direction.</text>
+    <text x="26" y="88" fill="#cbd7ea" font-size="12.5px">This is the warm start for a later run. It carries forward what stabilized and what still needs judgment.</text>
+  </g>
+
+  <g transform="translate(96 784)">
+    <rect width="520" height="266" rx="18" fill="#f8fafc" stroke="#d8e0ea"/>
+    <text x="24" y="40" class="section">What a reviewer sees</text>
+    <text x="24" y="68" class="body">The reflection report makes judgment explicit.</text>
+    <g transform="translate(24 106)">
+      <rect width="472" height="42" rx="11" fill="#ffffff" stroke="#d8e0ea"/>
+      <text x="16" y="27" class="label">stable decisions that can carry forward</text>
+      <rect y="56" width="472" height="42" rx="11" fill="#ffffff" stroke="#d8e0ea"/>
+      <text x="16" y="83" class="label">active tensions that require human judgment</text>
+      <rect y="112" width="472" height="42" rx="11" fill="#ffffff" stroke="#d8e0ea"/>
+      <text x="16" y="139" class="label">open questions that need evidence or owners</text>
+    </g>
+  </g>
+
+  <g transform="translate(664 784)">
+    <rect width="520" height="266" rx="18" fill="#fff8ed" stroke="#e2c99c"/>
+    <text x="24" y="40" class="section">What the next run loads</text>
+    <text x="24" y="68" class="body">The state file makes prior reasoning cheap to recover.</text>
+    <g transform="translate(24 106)">
+      <rect width="220" height="42" rx="11" fill="#ffffff" stroke="#e6d6b8"/>
+      <text x="16" y="27" class="label">decisions</text>
+      <rect x="244" width="220" height="42" rx="11" fill="#ffffff" stroke="#e6d6b8"/>
+      <text x="260" y="27" class="label">rejected directions</text>
+      <rect y="56" width="220" height="42" rx="11" fill="#ffffff" stroke="#e6d6b8"/>
+      <text x="16" y="83" class="label">known risks</text>
+      <rect x="244" y="56" width="220" height="42" rx="11" fill="#ffffff" stroke="#e6d6b8"/>
+      <text x="260" y="83" class="label">next actions</text>
+      <rect y="112" width="464" height="42" rx="11" fill="#ffffff" stroke="#e6d6b8"/>
+      <text x="16" y="139" class="label">rationale graph edges for audit and visualization</text>
+    </g>
   </g>
 </svg>
