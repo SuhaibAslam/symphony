@@ -23,7 +23,8 @@ the pass.
 
 ## The Problem
 
-A one-shot run can produce a decent concept summary. The brittle part is continuity.
+A one-shot run can produce a decent concept summary. The brittle part is preserving the structure
+around that summary.
 
 The next run still needs to know:
 
@@ -63,7 +64,7 @@ node examples/cognitive-harness/runtime.mjs
 
 The runtime writes 5 generated artifacts under `generated-workspace/`.
 
-## Artifact 1: Continuity State
+## Artifact 1: Cognitive State
 
 `COGNITIVE_STATE.json` is the compact state file.
 

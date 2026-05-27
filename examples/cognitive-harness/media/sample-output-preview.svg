@@ -1,31 +1,95 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1120" height="560" viewBox="0 0 1120 560" role="img" aria-labelledby="title desc">
-  <title id="title">Cognitive Harness sample output preview</title>
-  <desc id="desc">A preview of generated Cognitive Harness artifacts and key counts from the sample run.</desc>
-  <rect width="1120" height="560" fill="#f5f7f3"/>
-  <rect x="56" y="52" width="1008" height="456" rx="16" fill="#ffffff" stroke="#22252a" stroke-width="2"/>
-  <text x="92" y="108" font-family="Inter, Arial, sans-serif" font-size="30" font-weight="700" fill="#22252a">Sample run output</text>
-  <text x="92" y="142" font-family="Inter, Arial, sans-serif" font-size="17" fill="#4f5965">Committed artifacts show preserved reasoning state without running Node locally.</text>
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="720" viewBox="0 0 1280 720" role="img" aria-labelledby="title desc">
+  <title id="title">Cognitive Harness sample output</title>
+  <desc id="desc">A preview of generated Cognitive Harness files, graph counts, preserved tensions, and continuation state.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#f9fafb"/>
+      <stop offset="1" stop-color="#edf2f7"/>
+    </linearGradient>
+    <filter id="lift" x="-8%" y="-8%" width="116%" height="124%">
+      <feDropShadow dx="0" dy="12" stdDeviation="16" flood-color="#111827" flood-opacity="0.12"/>
+    </filter>
+    <style>
+      text { font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif; }
+      .title { fill: #111827; font-size: 32px; font-weight: 760; }
+      .subtitle { fill: #4b5563; font-size: 16px; }
+      .h { fill: #111827; font-size: 18px; font-weight: 740; }
+      .label { fill: #374151; font-size: 13px; font-weight: 700; }
+      .body { fill: #4b5563; font-size: 13px; }
+      .mono { fill: #223044; font-size: 13px; font-family: "SFMono-Regular", Consolas, "Liberation Mono", monospace; }
+      .num { fill: #111827; font-size: 34px; font-weight: 780; }
+    </style>
+  </defs>
 
-  <g font-family="Inter, Arial, sans-serif">
-    <rect x="92" y="190" width="298" height="238" rx="12" fill="#f8fafc" stroke="#c6ccd4"/>
-    <text x="122" y="232" font-size="19" font-weight="700" fill="#1f2933">Generated files</text>
-    <text x="122" y="269" font-size="15" fill="#334155">COGNITIVE_STATE.json</text>
-    <text x="122" y="298" font-size="15" fill="#334155">RATIONALE_GRAPH.json</text>
-    <text x="122" y="327" font-size="15" fill="#334155">REFLECTION_REPORT.md</text>
-    <text x="122" y="356" font-size="15" fill="#334155">CONTINUATION_PROMPT.md</text>
-    <text x="122" y="385" font-size="15" fill="#334155">RUN_SUMMARY.json</text>
+  <rect width="1280" height="720" fill="url(#bg)"/>
+  <rect x="52" y="44" width="1176" height="632" rx="28" fill="#ffffff" stroke="#d7dde5" filter="url(#lift)"/>
+  <text x="92" y="100" class="title">Generated workspace state</text>
+  <text x="92" y="130" class="subtitle">One committed run shows the actual handoff surface a future run or reviewer receives.</text>
 
-    <rect x="430" y="190" width="300" height="238" rx="12" fill="#fff8e6" stroke="#d3ae45"/>
-    <text x="460" y="232" font-size="19" font-weight="700" fill="#3d3216">Key counts</text>
-    <text x="460" y="270" font-size="15" fill="#3f3b30">2 decisions preserved</text>
-    <text x="460" y="300" font-size="15" fill="#3f3b30">3 tensions preserved</text>
-    <text x="460" y="330" font-size="15" fill="#3f3b30">5 open questions preserved</text>
-    <text x="460" y="360" font-size="15" fill="#3f3b30">28 rationale graph edges</text>
+  <g transform="translate(92 178)">
+    <rect width="338" height="374" rx="18" fill="#f8fafc" stroke="#d9dee5"/>
+    <text x="24" y="42" class="h">Files</text>
+    <text x="24" y="72" class="body">The demo writes a compact, inspectable bundle.</text>
+    <g transform="translate(24 108)">
+      <rect width="290" height="40" rx="10" fill="#ffffff" stroke="#d9dee5"/>
+      <text x="16" y="25" class="mono">COGNITIVE_STATE.json</text>
+      <rect y="54" width="290" height="40" rx="10" fill="#ffffff" stroke="#d9dee5"/>
+      <text x="16" y="79" class="mono">RATIONALE_GRAPH.json</text>
+      <rect y="108" width="290" height="40" rx="10" fill="#ffffff" stroke="#d9dee5"/>
+      <text x="16" y="133" class="mono">REFLECTION_REPORT.md</text>
+      <rect y="162" width="290" height="40" rx="10" fill="#ffffff" stroke="#d9dee5"/>
+      <text x="16" y="187" class="mono">CONTINUATION_PROMPT.md</text>
+      <rect y="216" width="290" height="40" rx="10" fill="#ffffff" stroke="#d9dee5"/>
+      <text x="16" y="241" class="mono">RUN_SUMMARY.json</text>
+    </g>
+  </g>
 
-    <rect x="770" y="190" width="258" height="238" rx="12" fill="#ecf7f1" stroke="#7bb08d"/>
-    <text x="800" y="232" font-size="19" font-weight="700" fill="#22452f">Next move</text>
-    <text x="800" y="270" font-size="15" fill="#263c30">Review active tensions</text>
-    <text x="800" y="300" font-size="15" fill="#263c30">Assign open questions</text>
-    <text x="800" y="330" font-size="15" fill="#263c30">Update graph before handoff</text>
+  <g transform="translate(470 178)">
+    <rect width="332" height="374" rx="18" fill="#fff8ed" stroke="#e2cfae"/>
+    <text x="24" y="42" class="h">Rationale graph</text>
+    <text x="24" y="72" class="body">Relationships stay machine-readable.</text>
+    <g transform="translate(30 118)">
+      <circle cx="110" cy="40" r="28" fill="#172033"/>
+      <text x="102" y="45" fill="#ffffff" font-size="13" font-weight="800">I</text>
+      <circle cx="42" cy="142" r="24" fill="#44637f"/>
+      <text x="34" y="147" fill="#ffffff" font-size="12" font-weight="800">E</text>
+      <circle cx="174" cy="142" r="24" fill="#8a6a22"/>
+      <text x="166" y="147" fill="#ffffff" font-size="12" font-weight="800">T</text>
+      <circle cx="110" cy="236" r="24" fill="#315f45"/>
+      <text x="102" y="241" fill="#ffffff" font-size="12" font-weight="800">D</text>
+      <path d="M96 64 L56 120" stroke="#9aa5b1" stroke-width="2"/>
+      <path d="M124 64 L160 120" stroke="#9aa5b1" stroke-width="2"/>
+      <path d="M58 160 L92 218" stroke="#9aa5b1" stroke-width="2"/>
+      <path d="M162 160 L126 218" stroke="#9aa5b1" stroke-width="2"/>
+      <text x="228" y="45" class="num">18</text>
+      <text x="228" y="68" class="label">nodes</text>
+      <text x="228" y="136" class="num">28</text>
+      <text x="228" y="159" class="label">edges</text>
+    </g>
+  </g>
+
+  <g transform="translate(842 178)">
+    <rect width="346" height="374" rx="18" fill="#eef7f2" stroke="#c4dccd"/>
+    <text x="24" y="42" class="h">Preserved judgment</text>
+    <text x="24" y="72" class="body">The output keeps unresolved work visible.</text>
+    <g transform="translate(24 112)">
+      <rect width="298" height="52" rx="12" fill="#ffffff" stroke="#c7ddd0"/>
+      <text x="18" y="24" class="label">2 stable decisions</text>
+      <text x="18" y="42" class="body">What can be carried forward</text>
+      <rect y="70" width="298" height="52" rx="12" fill="#ffffff" stroke="#c7ddd0"/>
+      <text x="18" y="94" class="label">3 active tensions</text>
+      <text x="18" y="112" class="body">What should not be flattened</text>
+      <rect y="140" width="298" height="52" rx="12" fill="#ffffff" stroke="#c7ddd0"/>
+      <text x="18" y="164" class="label">5 open questions</text>
+      <text x="18" y="182" class="body">What needs review or evidence</text>
+      <rect y="210" width="298" height="52" rx="12" fill="#ffffff" stroke="#c7ddd0"/>
+      <text x="18" y="234" class="label">1 continuation prompt</text>
+      <text x="18" y="252" class="body">Where the next run begins</text>
+    </g>
+  </g>
+
+  <g transform="translate(92 594)">
+    <rect width="1096" height="42" rx="21" fill="#111827"/>
+    <text x="24" y="27" fill="#f9fafb" font-size="14" font-weight="700">Core claim: the harness preserves the parts of reasoning that raw transcripts and terminal output make expensive to recover.</text>
   </g>
 </svg>

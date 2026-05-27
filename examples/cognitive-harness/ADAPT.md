@@ -2,7 +2,19 @@
 
 Use this demo as a pattern, then replace the fixtures.
 
-## 1. Pick A Bounded Inquiry
+## 1. Pick A Harness Challenge
+
+Choose the cognition problem you want the workspace to preserve.
+
+Useful starting points:
+
+- continuity across retries or handoffs
+- unresolved tension tracking
+- evidence and contradiction handling
+- human review of reasoning state
+- recovery after failed attempts
+
+## 2. Pick A Bounded Inquiry
 
 Start with a problem that has real ambiguity.
 
@@ -20,7 +32,7 @@ Weak examples:
 - a one-command task
 - anything with no meaningful tradeoff
 
-## 2. Write The Inquiry
+## 3. Write The Inquiry
 
 Edit `fixtures/inquiry.json`.
 
@@ -34,7 +46,7 @@ Keep it specific:
 
 Tensions matter. They are the parts a future run should keep seeing.
 
-## 3. Write The Constitution
+## 4. Write The Constitution
 
 Edit `fixtures/constitution.json`.
 
@@ -53,7 +65,7 @@ The included archetypes are:
 
 Those are boring names in a good way. They are easy to replace.
 
-## 4. Add Signals
+## 5. Add Signals
 
 Edit `fixtures/signals.json`.
 
@@ -70,7 +82,7 @@ Signals can come from:
 
 Each observation can carry tags. Tags activate tensions.
 
-## 5. Run The Demo
+## 6. Run The Demo
 
 ```bash
 node examples/cognitive-harness/runtime.mjs
@@ -86,7 +98,7 @@ Read the generated files:
 
 Compare them with `sample-output/` if you want a known-good run.
 
-## 6. Check The Handoff
+## 7. Check The Handoff
 
 Ask 3 questions:
 

@@ -4,6 +4,17 @@ This spec describes the demo contract. It is small on purpose.
 
 The runtime reads 3 inputs and writes 5 artifacts.
 
+## Design Goals
+
+The harness should preserve cognition that matters across runs:
+
+- what is stable
+- what was rejected
+- what remains unresolved
+- what evidence supports the current state
+- what a reviewer should inspect
+- where the next run should begin
+
 ## Inputs
 
 ### `fixtures/constitution.json`

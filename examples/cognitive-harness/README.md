@@ -1,13 +1,13 @@
 # Cognitive Harness
 
-A dependency-free demo for structured reasoning inside a persistent Symphony-style workspace.
+A dependency-free demo for cognition-shaped workspaces on top of Symphony primitives.
 
 The demo runs a product onboarding inquiry through a tiny state machine. It writes preserved
 cognitive state, a rationale graph, a reflection report, a continuation prompt, and a run summary.
 
 Everything is local. No model call, no API key, no database, no service setup.
 
-![Cognitive Harness flow](media/cognitive-harness-flow.svg)
+![Cognitive Harness architecture](media/cognitive-harness-architecture.svg)
 
 ## Why This Exists
 
@@ -19,6 +19,9 @@ This demo asks a practical question:
 ```text
 What structure should live inside a workspace so the next run can pick up the reasoning and start warm?
 ```
+
+Continuity is the demo case. The wider harness problem includes tension preservation, recovery,
+review surfaces, and domain adaptation.
 
 The answer here is deliberately inspectable:
 
@@ -62,6 +65,8 @@ For the state contract, read `SPEC.md`.
 For guidance on making your own version, read `ADAPT.md`.
 
 For generated artifacts from one run, read `sample-output/`.
+
+![Cognitive Harness sample output preview](media/sample-output-preview.svg)
 
 ## Example Output
 
@@ -121,7 +126,7 @@ examples/cognitive-harness/
     CONTINUATION_PROMPT.md
     RUN_SUMMARY.json
   media/
-    cognitive-harness-flow.svg
+    cognitive-harness-architecture.svg
     sample-output-preview.svg
   generated-workspace/
     .gitignore
@@ -136,7 +141,7 @@ examples/cognitive-harness/
 | Issue | `inquiry.json`, the bounded problem space |
 | Workspace | `generated-workspace/`, the persistent state boundary |
 | Agent | reasoning archetypes in the constitution |
-| Retry | continuation from preserved state |
+| Retry | recovery from preserved state |
 | Observability | rationale graph, reflection report, run summary |
 | Human review | explicit judgment over unresolved questions |
 

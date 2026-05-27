@@ -1,17 +1,21 @@
 # Cognitive Harness
 
-Branch demo for structured reasoning inside Symphony-style workspaces.
+Branch demo for cognition-shaped workspaces on top of Symphony primitives.
 
 Symphony is already good at turning tracked work into isolated agent runs.
 
-The fragile part is the handoff. When a run stops, retries, or needs human review, the next run
-needs more than raw logs. It needs to know what stabilized, what was rejected, which tensions still
-matter, and where to begin.
+The fragile part is the reasoning layer around a run. Long-running agent work needs more than raw
+logs and terminal output. It needs bounded inquiry, preserved decisions, rejected directions,
+visible tensions, reflection, and a clean place for the next run to begin.
 
 This branch proposes **Cognitive Harness**: a small working structure for bounded inquiry,
 workspace policy, preserved reasoning state, rationale, reflection, and continuation.
 
-![Cognitive Harness flow](examples/cognitive-harness/media/cognitive-harness-flow.svg)
+![Cognitive Harness architecture](examples/cognitive-harness/media/cognitive-harness-architecture.svg)
+
+Continuity is the runnable case study here. The broader pattern is a harness for cumulative
+cognition: keep the parts of reasoning that should compound, expose the parts that still need
+judgment, and make both inspectable inside a persistent workspace.
 
 ## What You Will See
 
