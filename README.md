@@ -15,7 +15,51 @@ This branch proposes **Cognitive Harness**: a small working structure for bounde
 workspace policy, preserved reasoning state, rationale, reflection, and continuation. It keeps
 continuity concrete while pointing at a broader pattern for cumulative cognition in agent harnesses.
 
-![Cognitive Harness architecture](examples/cognitive-harness/media/cognitive-harness-architecture.svg)
+```mermaid
+flowchart TB
+    work["Tracked work<br/>Issue, task, or project request"] --> workspace["Isolated workspace<br/>Files, hooks, retries, logs"]
+    workflow["Workflow policy<br/>WORKFLOW.md and repo guidance"] --> workspace
+    workspace --> codex["Codex run<br/>Implementation pass"]
+    codex --> normal["Normal run output<br/>Diffs, tests, summaries, review evidence"]
+
+    workspace --> harness["Cognitive Harness layer"]
+    codex --> harness
+
+    subgraph harness_detail["What the harness preserves"]
+        inquiry["Bounded inquiry<br/>Problem, stakeholders, tensions"]
+        constitution["Workspace constitution<br/>Policy, archetypes, constraints"]
+        signals["Signals<br/>Evidence, rejected directions, risks"]
+        state["Cognitive state<br/>Stable decisions and open questions"]
+        graph["Rationale graph<br/>Why things connect"]
+        reflection["Reflection report<br/>Human review surface"]
+        continuation["Continuation prompt<br/>Warm start for the next run"]
+    end
+
+    harness --> inquiry
+    harness --> constitution
+    harness --> signals
+    inquiry --> state
+    constitution --> state
+    signals --> graph
+    state --> reflection
+    graph --> reflection
+    state --> continuation
+    graph --> continuation
+
+    reflection --> reviewer["Reviewer<br/>Inspect judgment"]
+    continuation --> retry["Retry or later run<br/>Resume with context"]
+    normal --> reviewer
+
+    classDef substrate fill:#eef6ff,stroke:#2563eb,color:#172554,stroke-width:1px
+    classDef harness fill:#f5f3ff,stroke:#7c3aed,color:#2e1065,stroke-width:1px
+    classDef artifact fill:#ecfdf5,stroke:#059669,color:#064e3b,stroke-width:1px
+    classDef human fill:#fff7ed,stroke:#ea580c,color:#7c2d12,stroke-width:1px
+
+    class work,workspace,workflow,codex,normal substrate
+    class harness,inquiry,constitution,signals harness
+    class state,graph,reflection,continuation artifact
+    class reviewer,retry human
+```
 
 ## What Changed In This Branch
 

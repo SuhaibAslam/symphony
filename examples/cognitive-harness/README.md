@@ -7,7 +7,45 @@ cognitive state, a rationale graph, a reflection report, a continuation prompt, 
 
 Everything is local. It requires zero model calls, API keys, databases, or service setup.
 
-![Cognitive Harness architecture](media/cognitive-harness-architecture.svg)
+```mermaid
+flowchart TB
+    inquiry["fixtures/inquiry.json<br/>Problem, stakeholders, tensions"]
+    constitution["fixtures/constitution.json<br/>Policy, archetypes, constraints"]
+    signals["fixtures/signals.json<br/>Evidence, rejected directions, risks"]
+
+    runtime["runtime.mjs<br/>Deterministic local pass"]
+
+    state["COGNITIVE_STATE.json<br/>What the next run should preserve"]
+    graph["RATIONALE_GRAPH.json<br/>How evidence and decisions connect"]
+    report["REFLECTION_REPORT.md<br/>What a reviewer should inspect"]
+    prompt["CONTINUATION_PROMPT.md<br/>Where the next run should begin"]
+    summary["RUN_SUMMARY.json<br/>Counts and generated paths"]
+
+    inquiry --> runtime
+    constitution --> runtime
+    signals --> runtime
+
+    runtime --> state
+    runtime --> graph
+    runtime --> report
+    runtime --> prompt
+    runtime --> summary
+
+    state --> prompt
+    graph --> report
+    report --> reviewer["Human reviewer<br/>Checks unresolved judgment"]
+    prompt --> next["Retry or continuation run<br/>Starts warm"]
+
+    classDef input fill:#eef6ff,stroke:#2563eb,color:#172554,stroke-width:1px
+    classDef runner fill:#f5f3ff,stroke:#7c3aed,color:#2e1065,stroke-width:1px
+    classDef artifact fill:#ecfdf5,stroke:#059669,color:#064e3b,stroke-width:1px
+    classDef consumer fill:#fff7ed,stroke:#ea580c,color:#7c2d12,stroke-width:1px
+
+    class inquiry,constitution,signals input
+    class runtime runner
+    class state,graph,report,prompt,summary artifact
+    class reviewer,next consumer
+```
 
 ## Why This Exists
 
@@ -72,7 +110,35 @@ For guidance on wiring this into a real harness, read `INTEGRATE.md`.
 
 For generated artifacts from one run, read `sample-output/`.
 
-![Cognitive Harness sample output preview](media/sample-output-preview.svg)
+```mermaid
+flowchart LR
+    subgraph generated["Generated artifact bundle"]
+        state["COGNITIVE_STATE.json<br/>2 decisions<br/>3 tensions<br/>5 open questions"]
+        graph["RATIONALE_GRAPH.json<br/>28 edges across evidence, decisions, risks, and questions"]
+        report["REFLECTION_REPORT.md<br/>Review surface for unresolved judgment"]
+        prompt["CONTINUATION_PROMPT.md<br/>Focused restart instructions"]
+        summary["RUN_SUMMARY.json<br/>Operational counts"]
+    end
+
+    state --> reviewer["Reviewer view<br/>What is stable?<br/>What still needs judgment?"]
+    graph --> reviewer
+    report --> reviewer
+
+    state --> continuation["Next-run view<br/>What should be preserved?"]
+    prompt --> continuation
+    summary --> continuation
+
+    reviewer --> decision["Human decision<br/>Accept, revise, or ask for evidence"]
+    continuation --> rerun["Later run<br/>Avoids repeating the same exploration"]
+
+    classDef artifact fill:#ecfdf5,stroke:#059669,color:#064e3b,stroke-width:1px
+    classDef review fill:#fff7ed,stroke:#ea580c,color:#7c2d12,stroke-width:1px
+    classDef run fill:#eef6ff,stroke:#2563eb,color:#172554,stroke-width:1px
+
+    class state,graph,report,prompt,summary artifact
+    class reviewer,decision review
+    class continuation,rerun run
+```
 
 ## How To Read The Output
 
@@ -143,9 +209,6 @@ examples/cognitive-harness/
     REFLECTION_REPORT.md
     CONTINUATION_PROMPT.md
     RUN_SUMMARY.json
-  media/
-    cognitive-harness-architecture.svg
-    sample-output-preview.svg
   generated-workspace/
     .gitignore
     .gitkeep
