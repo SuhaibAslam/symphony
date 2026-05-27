@@ -150,6 +150,21 @@ The sample pass ends with:
 That state is enough for a reviewer or continuation run to see what has stabilized and what still
 needs judgment.
 
+## What To Notice
+
+The runtime preserves the reasoning structure around the product problem.
+
+It preserves the working structure around the problem:
+
+- decisions that can be carried forward
+- tensions that should remain visible
+- rejected directions that should stay out of the loop
+- open questions that need evidence or review
+- risks that should shape the next pass
+
+That is the harness move. The useful output includes the preserved reasoning surface around the
+answer.
+
 ## Why This Belongs Near Symphony
 
 Symphony supplies the execution shell:

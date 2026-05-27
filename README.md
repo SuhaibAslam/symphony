@@ -2,37 +2,36 @@
 
 Branch demo for cognition-shaped workspaces on top of Symphony primitives.
 
-Symphony is already good at turning tracked work into isolated agent runs.
+Symphony turns tracked work into isolated implementation runs. It gives Codex a practical execution
+substrate: workspace isolation, lifecycle hooks, retries, observability, and human review.
 
-The fragile part is the reasoning layer around a run. Long-running agent work needs more than raw
-logs and terminal output. It needs bounded inquiry, preserved decisions, rejected directions,
-visible tensions, reflection, and a clean place for the next run to begin.
+That leaves a second layer worth exploring: the reasoning state around the run.
+
+Long-running agent work can lose useful cognition between attempts. A later run may repeat prior
+exploration, miss rejected directions, flatten unresolved tradeoffs, or hand a reviewer a final
+answer without the judgment structure around it.
 
 This branch proposes **Cognitive Harness**: a small working structure for bounded inquiry,
-workspace policy, preserved reasoning state, rationale, reflection, and continuation.
+workspace policy, preserved reasoning state, rationale, reflection, and continuation. It keeps
+continuity concrete while pointing at a broader pattern for cumulative cognition in agent harnesses.
 
 ![Cognitive Harness architecture](examples/cognitive-harness/media/cognitive-harness-architecture.svg)
 
-Continuity is the runnable case study here. The broader pattern is a harness for cumulative
-cognition: keep the parts of reasoning that should compound, expose the parts that still need
-judgment, and make both inspectable inside a persistent workspace.
+## What Changed In This Branch
 
-## What You Will See
+- Added a branch guide: [COGNITIVE_HARNESS.md](COGNITIVE_HARNESS.md)
+- Added a runnable example: [examples/cognitive-harness/](examples/cognitive-harness/)
+- Added a case study with 5 stakeholders and 3 preserved tensions
+- Added a deterministic runtime that writes state, graph, reflection, continuation, and summary artifacts
+- Added committed sample output from one run, including 28 rationale graph edges
+- Added a state contract, adaptation guide, and future development notes
 
-- A runnable example under `examples/cognitive-harness/`
-- A product onboarding case study with 5 stakeholders and 3 preserved tensions
-- A deterministic runtime that writes state, graph, reflection, continuation, and summary artifacts
-- Committed sample output from one run, including 28 rationale graph edges
-- A state contract and adaptation guide so the pattern can be reused
+## Reader Path
 
-## Start Here
-
-- [Branch overview](COGNITIVE_HARNESS.md)
-- [Runnable demo](examples/cognitive-harness/)
-- [Case study](examples/cognitive-harness/CASE_STUDY.md)
-- [State contract](examples/cognitive-harness/SPEC.md)
-- [Adaptation guide](examples/cognitive-harness/ADAPT.md)
-- [Sample output](examples/cognitive-harness/sample-output/)
+1. Read [COGNITIVE_HARNESS.md](COGNITIVE_HARNESS.md) for the challenge, approach, and open questions.
+2. Inspect [sample-output/](examples/cognitive-harness/sample-output/) to see one generated run.
+3. Run the demo locally.
+4. Use [ADAPT.md](examples/cognitive-harness/ADAPT.md) to apply the harness shape to your own workflow.
 
 Run it from the repo root:
 

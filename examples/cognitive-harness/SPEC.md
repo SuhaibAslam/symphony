@@ -169,3 +169,21 @@ Use it to inspect the end state without running Node locally.
 Symphony can provide the workspace, lifecycle, retry, continuation, and observability shell.
 
 This demo focuses on the state that can live inside that shell.
+
+Likely integration points:
+
+- load `COGNITIVE_STATE.json` when a workspace is resumed
+- update state after failed runs, handoffs, or review comments
+- expose `REFLECTION_REPORT.md` as a review artifact
+- use `CONTINUATION_PROMPT.md` when spawning a follow-up run
+- keep `RATIONALE_GRAPH.json` available for visualization or audit
+
+## Non-Goals
+
+- avoid adding a new orchestrator
+- avoid model-specific memory behavior
+- avoid domain-specific product workflow assumptions
+- keep raw logs and traces available as source material
+- avoid hidden service dependencies
+
+The harness should make reasoning state easier to inspect while keeping the underlying run visible.

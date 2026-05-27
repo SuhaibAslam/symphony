@@ -2,6 +2,9 @@
 
 Use this demo as a pattern, then replace the fixtures.
 
+The product onboarding example is a template. Use it to decide what cognition your own workspace
+should preserve, then make that state explicit.
+
 ## 1. Pick A Harness Challenge
 
 Choose the cognition problem you want the workspace to preserve.
@@ -108,4 +111,37 @@ Can a reviewer see what still needs judgment?
 Can the next prompt start from state instead of from scratch?
 ```
 
-If the answer is yes, the score is doing its job.
+If the answer is yes, the harness is doing its job.
+
+## 8. Decide What To Keep Stable
+
+A useful harness has a stable core and a flexible edge.
+
+Keep stable:
+
+- artifact names
+- required state fields
+- graph node and edge shape
+- reflection report purpose
+- continuation prompt purpose
+
+Customize:
+
+- domain
+- archetypes
+- tension tags
+- evidence sources
+- review policy
+- next-action logic
+
+## 9. Connect It To A Real Harness
+
+For a Symphony-style implementation, the natural attachment points are:
+
+- after workspace creation: write or load the starting inquiry
+- after agent failure: update risks, failed attempts, and recovery notes
+- before retry: load `COGNITIVE_STATE.json`
+- before human review: write `REFLECTION_REPORT.md`
+- before continuation: write `CONTINUATION_PROMPT.md`
+
+That keeps the harness operational. It produces files a run can consume and a reviewer can inspect.

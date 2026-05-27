@@ -5,7 +5,7 @@ A dependency-free demo for cognition-shaped workspaces on top of Symphony primit
 The demo runs a product onboarding inquiry through a tiny state machine. It writes preserved
 cognitive state, a rationale graph, a reflection report, a continuation prompt, and a run summary.
 
-Everything is local. No model call, no API key, no database, no service setup.
+Everything is local. It requires zero model calls, API keys, databases, or service setup.
 
 ![Cognitive Harness architecture](media/cognitive-harness-architecture.svg)
 
@@ -23,18 +23,22 @@ What structure should live inside a workspace so the next run can pick up the re
 Continuity is the demo case. The wider harness problem includes tension preservation, recovery,
 review surfaces, and domain adaptation.
 
-The answer here is deliberately inspectable:
+The answer here is deliberately inspectable. The runtime turns 3 input files into 5 reviewable
+artifacts.
 
-- a bounded inquiry
-- a constitution for the workspace
-- simulated evidence
-- stakeholder tensions
-- stabilized decisions
-- rejected directions
-- open questions
-- risks
-- next actions
-- a graph that connects the pieces
+Inputs:
+
+- `fixtures/inquiry.json`: bounded problem, stakeholders, and tensions
+- `fixtures/constitution.json`: preservation policy, archetypes, constraints, and reflection cadence
+- `fixtures/signals.json`: simulated observations, rejected directions, questions, and risks
+
+Outputs:
+
+- `generated-workspace/COGNITIVE_STATE.json`
+- `generated-workspace/RATIONALE_GRAPH.json`
+- `generated-workspace/REFLECTION_REPORT.md`
+- `generated-workspace/CONTINUATION_PROMPT.md`
+- `generated-workspace/RUN_SUMMARY.json`
 
 ## Run
 
@@ -67,6 +71,17 @@ For guidance on making your own version, read `ADAPT.md`.
 For generated artifacts from one run, read `sample-output/`.
 
 ![Cognitive Harness sample output preview](media/sample-output-preview.svg)
+
+## How To Read The Output
+
+Start with `REFLECTION_REPORT.md` if you want the human review surface.
+
+Start with `COGNITIVE_STATE.json` if you want the next-run state.
+
+Start with `RATIONALE_GRAPH.json` if you want to see how evidence, tensions, decisions, questions,
+and risks connect.
+
+Start with `CONTINUATION_PROMPT.md` if you want to see how a later run should resume.
 
 ## Example Output
 
@@ -167,3 +182,11 @@ The generated files are ignored by git. Run the demo to regenerate them.
 6. It writes a continuation prompt for the next run.
 
 It is a working state model. Small enough to inspect. Big enough to show the shape.
+
+## Next Places To Build
+
+- Replace simulated signals with real Symphony run traces.
+- Add schema validation for state and graph artifacts.
+- Write state from lifecycle hooks after failure, review, or handoff.
+- Visualize the rationale graph in a reviewer-friendly way.
+- Compare multiple runs to find recurring unresolved tensions.
