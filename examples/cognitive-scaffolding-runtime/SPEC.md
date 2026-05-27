@@ -128,6 +128,12 @@ A small operational summary.
 
 It includes generated paths and counts.
 
+## Sample Output
+
+The `sample-output/` directory commits one generated run.
+
+Use it to inspect the end state without running Node locally.
+
 ## Runtime Rules
 
 1. Read the inputs.

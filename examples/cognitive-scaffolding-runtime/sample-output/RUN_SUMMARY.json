@@ -1,0 +1,16 @@
+{
+  "inquiry_id": "inq-product-onboarding",
+  "generated_at": "2026-05-26T20:30:00Z",
+  "memory_path": "generated-workspace/COGNITIVE_STATE.json",
+  "graph_path": "generated-workspace/RATIONALE_GRAPH.json",
+  "reflection_path": "generated-workspace/REFLECTION_REPORT.md",
+  "continuation_path": "generated-workspace/CONTINUATION_PROMPT.md",
+  "counts": {
+    "decisions": 2,
+    "tensions": 3,
+    "open_questions": 5,
+    "risks": 2,
+    "graph_nodes": 18,
+    "graph_edges": 28
+  }
+}

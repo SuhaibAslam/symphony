@@ -84,6 +84,8 @@ Read the generated files:
 - `generated-workspace/CONTINUATION_PROMPT.md`
 - `generated-workspace/RUN_SUMMARY.json`
 
+Compare them with `sample-output/` if you want a known-good run.
+
 ## 6. Check The Handoff
 
 Ask 3 questions:

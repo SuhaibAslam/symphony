@@ -1,0 +1,207 @@
+{
+  "version": 1,
+  "inquiry": {
+    "id": "inq-product-onboarding",
+    "title": "Design a clearer onboarding experience for a complex product",
+    "domain": "product-design"
+  },
+  "constitution": {
+    "id": "cognitive-scaffolding-v1",
+    "archetypes": [
+      "explorer",
+      "critic",
+      "synthesizer"
+    ],
+    "preserve": [
+      "decisions",
+      "rejected_directions",
+      "tensions",
+      "open_questions",
+      "known_risks",
+      "evidence",
+      "next_actions"
+    ]
+  },
+  "updated_at": "2026-05-26T20:30:00Z",
+  "summary": "Design a clearer onboarding experience for a complex product is being held as a bounded reasoning workspace with preserved state. 2 decision(s) are stabilized, 3 tension(s) remain visible, and 5 question(s) need review before convergence.",
+  "decisions": [
+    {
+      "id": "dec-001",
+      "summary": "Preserve a dual-track concept space instead of forcing a single direction immediately.",
+      "rationale": "The strongest signals favor user confidence and support efficiency, but the active tensions show that premature convergence would hide important tradeoffs.",
+      "linked_tensions": [
+        "ten-001",
+        "ten-002",
+        "ten-003"
+      ],
+      "at": "2026-05-26T20:30:00Z"
+    },
+    {
+      "id": "dec-002",
+      "summary": "Represent unresolved stakeholder conflict as first-class workspace state.",
+      "rationale": "The inquiry contains durable ambiguity that should be reviewed explicitly rather than compressed into a generic summary.",
+      "linked_tensions": [
+        "ten-001",
+        "ten-003"
+      ],
+      "at": "2026-05-26T20:30:00Z"
+    }
+  ],
+  "rejected_directions": [
+    {
+      "id": "rej-001",
+      "summary": "Avoid a fully personalized policy guidance generator.",
+      "reason": "It increases review burden and makes audit trails harder.",
+      "at": "2026-05-26T20:30:00Z"
+    },
+    {
+      "id": "rej-002",
+      "summary": "Avoid burying important constraints behind optional help links.",
+      "reason": "It reduces friction by hiding information that should stay visible.",
+      "at": "2026-05-26T20:30:00Z"
+    }
+  ],
+  "tensions": [
+    {
+      "id": "ten-001",
+      "summary": "New users need reassurance, while the support team needs fewer repeated escalations.",
+      "preserve_reason": "Optimizing only one side can make the system less useful.",
+      "supporting_signals": [
+        "ev-001",
+        "ev-002"
+      ],
+      "status": "active"
+    },
+    {
+      "id": "ten-002",
+      "summary": "A simple first-run experience still needs to surface important policy constraints.",
+      "preserve_reason": "Policy constraints need to stay visible while friction gets reduced.",
+      "supporting_signals": [
+        "ev-001"
+      ],
+      "status": "active"
+    },
+    {
+      "id": "ten-003",
+      "summary": "Personalization could improve confidence but may create review overhead.",
+      "preserve_reason": "The concept space should retain both user confidence and governance constraints.",
+      "supporting_signals": [
+        "ev-003"
+      ],
+      "status": "active"
+    }
+  ],
+  "open_questions": [
+    {
+      "id": "q-001",
+      "question": "Which constraints must appear before setup begins, and which can appear contextually?",
+      "owner": "policy reviewer",
+      "linked_tensions": [
+        "ten-002"
+      ]
+    },
+    {
+      "id": "q-002",
+      "question": "What support escalation data would validate that onboarding actually reduces repeated support load?",
+      "owner": "support team",
+      "linked_tensions": [
+        "ten-001"
+      ]
+    },
+    {
+      "id": "q-ten-001",
+      "question": "What evidence would let us resolve or deliberately preserve: New users need reassurance, while the support team needs fewer repeated escalations.",
+      "owner": "human-review",
+      "linked_tensions": [
+        "ten-001"
+      ]
+    },
+    {
+      "id": "q-ten-002",
+      "question": "What evidence would let us resolve or deliberately preserve: A simple first-run experience still needs to surface important policy constraints.",
+      "owner": "human-review",
+      "linked_tensions": [
+        "ten-002"
+      ]
+    },
+    {
+      "id": "q-ten-003",
+      "question": "What evidence would let us resolve or deliberately preserve: Personalization could improve confidence but may create review overhead.",
+      "owner": "human-review",
+      "linked_tensions": [
+        "ten-003"
+      ]
+    }
+  ],
+  "known_risks": [
+    {
+      "id": "risk-001",
+      "summary": "A reassuring experience could accidentally soften important policy language.",
+      "mitigation": "Keep approved language intact while changing sequencing and explanation.",
+      "severity": "high",
+      "linked_tensions": [
+        "ten-002"
+      ]
+    },
+    {
+      "id": "risk-tension-collapse",
+      "summary": "The workspace may collapse unresolved tensions into a false consensus if summaries become too tidy.",
+      "mitigation": "Keep active tensions visible in memory, graph edges, reflection report, and continuation prompt.",
+      "severity": "high",
+      "linked_tensions": [
+        "ten-001",
+        "ten-002",
+        "ten-003"
+      ]
+    }
+  ],
+  "evidence": [
+    {
+      "id": "ev-001",
+      "summary": "New users often abandon setup when policy language appears before they understand the task.",
+      "source": "simulated interview synthesis",
+      "confidence": "medium"
+    },
+    {
+      "id": "ev-002",
+      "summary": "Support teams want onboarding to reduce repeated escalation during the first week.",
+      "source": "simulated stakeholder review",
+      "confidence": "high"
+    },
+    {
+      "id": "ev-003",
+      "summary": "Policy reviewers prefer reusable language blocks over generated custom guidance.",
+      "source": "simulated governance note",
+      "confidence": "medium"
+    }
+  ],
+  "next_actions": [
+    {
+      "id": "next-001",
+      "summary": "Run a focused review of the active tensions before selecting a primary concept direction.",
+      "priority": "high"
+    },
+    {
+      "id": "next-002",
+      "summary": "Answer or assign 5 open question(s) before handoff.",
+      "priority": "high"
+    },
+    {
+      "id": "next-003",
+      "summary": "Add mitigation notes for 2 high-severity risk(s).",
+      "priority": "medium"
+    }
+  ],
+  "reflection_policy": {
+    "cadence": [
+      "after_major_concept",
+      "after_stakeholder_conflict",
+      "before_human_handoff"
+    ],
+    "preserve_ambiguity": true
+  },
+  "metadata": {
+    "producer": "cognitive-scaffolding-runtime-demo",
+    "prior_memory_loaded": false
+  }
+}

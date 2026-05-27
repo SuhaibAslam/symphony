@@ -1,0 +1,237 @@
+{
+  "version": 1,
+  "nodes": [
+    {
+      "id": "inq-product-onboarding",
+      "type": "inquiry",
+      "label": "Design a clearer onboarding experience for a complex product"
+    },
+    {
+      "id": "ev-001",
+      "type": "evidence",
+      "label": "New users often abandon setup when policy language appears before they understand the task."
+    },
+    {
+      "id": "ev-002",
+      "type": "evidence",
+      "label": "Support teams want onboarding to reduce repeated escalation during the first week."
+    },
+    {
+      "id": "ev-003",
+      "type": "evidence",
+      "label": "Policy reviewers prefer reusable language blocks over generated custom guidance."
+    },
+    {
+      "id": "ten-001",
+      "type": "tension",
+      "label": "New users need reassurance, while the support team needs fewer repeated escalations."
+    },
+    {
+      "id": "ten-002",
+      "type": "tension",
+      "label": "A simple first-run experience still needs to surface important policy constraints."
+    },
+    {
+      "id": "ten-003",
+      "type": "tension",
+      "label": "Personalization could improve confidence but may create review overhead."
+    },
+    {
+      "id": "dec-001",
+      "type": "decision",
+      "label": "Preserve a dual-track concept space instead of forcing a single direction immediately."
+    },
+    {
+      "id": "dec-002",
+      "type": "decision",
+      "label": "Represent unresolved stakeholder conflict as first-class workspace state."
+    },
+    {
+      "id": "rej-001",
+      "type": "rejected_direction",
+      "label": "Avoid a fully personalized policy guidance generator."
+    },
+    {
+      "id": "rej-002",
+      "type": "rejected_direction",
+      "label": "Avoid burying important constraints behind optional help links."
+    },
+    {
+      "id": "q-001",
+      "type": "open_question",
+      "label": "Which constraints must appear before setup begins, and which can appear contextually?"
+    },
+    {
+      "id": "q-002",
+      "type": "open_question",
+      "label": "What support escalation data would validate that onboarding actually reduces repeated support load?"
+    },
+    {
+      "id": "q-ten-001",
+      "type": "open_question",
+      "label": "What evidence would let us resolve or deliberately preserve: New users need reassurance, while the support team needs fewer repeated escalations."
+    },
+    {
+      "id": "q-ten-002",
+      "type": "open_question",
+      "label": "What evidence would let us resolve or deliberately preserve: A simple first-run experience still needs to surface important policy constraints."
+    },
+    {
+      "id": "q-ten-003",
+      "type": "open_question",
+      "label": "What evidence would let us resolve or deliberately preserve: Personalization could improve confidence but may create review overhead."
+    },
+    {
+      "id": "risk-001",
+      "type": "risk",
+      "label": "A reassuring experience could accidentally soften important policy language."
+    },
+    {
+      "id": "risk-tension-collapse",
+      "type": "risk",
+      "label": "The workspace may collapse unresolved tensions into a false consensus if summaries become too tidy."
+    }
+  ],
+  "edges": [
+    {
+      "from": "ev-001",
+      "to": "inq-product-onboarding",
+      "relation": "informs"
+    },
+    {
+      "from": "ev-002",
+      "to": "inq-product-onboarding",
+      "relation": "informs"
+    },
+    {
+      "from": "ev-003",
+      "to": "inq-product-onboarding",
+      "relation": "informs"
+    },
+    {
+      "from": "ten-001",
+      "to": "inq-product-onboarding",
+      "relation": "constrains"
+    },
+    {
+      "from": "ev-001",
+      "to": "ten-001",
+      "relation": "activates"
+    },
+    {
+      "from": "ev-002",
+      "to": "ten-001",
+      "relation": "activates"
+    },
+    {
+      "from": "ten-002",
+      "to": "inq-product-onboarding",
+      "relation": "constrains"
+    },
+    {
+      "from": "ev-001",
+      "to": "ten-002",
+      "relation": "activates"
+    },
+    {
+      "from": "ten-003",
+      "to": "inq-product-onboarding",
+      "relation": "constrains"
+    },
+    {
+      "from": "ev-003",
+      "to": "ten-003",
+      "relation": "activates"
+    },
+    {
+      "from": "dec-001",
+      "to": "inq-product-onboarding",
+      "relation": "stabilizes"
+    },
+    {
+      "from": "ten-001",
+      "to": "dec-001",
+      "relation": "shapes"
+    },
+    {
+      "from": "ten-002",
+      "to": "dec-001",
+      "relation": "shapes"
+    },
+    {
+      "from": "ten-003",
+      "to": "dec-001",
+      "relation": "shapes"
+    },
+    {
+      "from": "dec-002",
+      "to": "inq-product-onboarding",
+      "relation": "stabilizes"
+    },
+    {
+      "from": "ten-001",
+      "to": "dec-002",
+      "relation": "shapes"
+    },
+    {
+      "from": "ten-003",
+      "to": "dec-002",
+      "relation": "shapes"
+    },
+    {
+      "from": "rej-001",
+      "to": "inq-product-onboarding",
+      "relation": "bounds"
+    },
+    {
+      "from": "rej-002",
+      "to": "inq-product-onboarding",
+      "relation": "bounds"
+    },
+    {
+      "from": "q-001",
+      "to": "ten-002",
+      "relation": "interrogates"
+    },
+    {
+      "from": "q-002",
+      "to": "ten-001",
+      "relation": "interrogates"
+    },
+    {
+      "from": "q-ten-001",
+      "to": "ten-001",
+      "relation": "interrogates"
+    },
+    {
+      "from": "q-ten-002",
+      "to": "ten-002",
+      "relation": "interrogates"
+    },
+    {
+      "from": "q-ten-003",
+      "to": "ten-003",
+      "relation": "interrogates"
+    },
+    {
+      "from": "risk-001",
+      "to": "ten-002",
+      "relation": "threatens"
+    },
+    {
+      "from": "risk-tension-collapse",
+      "to": "ten-001",
+      "relation": "threatens"
+    },
+    {
+      "from": "risk-tension-collapse",
+      "to": "ten-002",
+      "relation": "threatens"
+    },
+    {
+      "from": "risk-tension-collapse",
+      "to": "ten-003",
+      "relation": "threatens"
+    }
+  ]
+}

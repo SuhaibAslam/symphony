@@ -60,6 +60,8 @@ For the state contract, read `SPEC.md`.
 
 For guidance on making your own version, read `ADAPT.md`.
 
+For generated artifacts from one run, read `sample-output/`.
+
 ## Example Output
 
 ```text
@@ -111,6 +113,12 @@ examples/cognitive-scaffolding-runtime/
     constitution.json
     inquiry.json
     signals.json
+  sample-output/
+    COGNITIVE_STATE.json
+    RATIONALE_GRAPH.json
+    REFLECTION_REPORT.md
+    CONTINUATION_PROMPT.md
+    RUN_SUMMARY.json
   generated-workspace/
     .gitignore
     .gitkeep

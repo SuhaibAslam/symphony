@@ -1,3 +1,25 @@
+# Branch Demo: Cognitive Scaffolding Runtime
+
+This fork branch adds a self-contained demo for cumulative reasoning inside a Symphony-style
+workspace.
+
+Start here:
+
+- [Branch overview](COGNITIVE_SCAFFOLDING_RUNTIME.md)
+- [Runnable demo](examples/cognitive-scaffolding-runtime/)
+- [Case study](examples/cognitive-scaffolding-runtime/CASE_STUDY.md)
+- [State contract](examples/cognitive-scaffolding-runtime/SPEC.md)
+- [Adaptation guide](examples/cognitive-scaffolding-runtime/ADAPT.md)
+- [Sample output](examples/cognitive-scaffolding-runtime/sample-output/)
+
+Run it:
+
+```bash
+node examples/cognitive-scaffolding-runtime/runtime.mjs
+```
+
+The original Symphony README continues below.
+
 # Symphony
 
 Symphony turns project work into isolated, autonomous implementation runs, allowing teams to manage
