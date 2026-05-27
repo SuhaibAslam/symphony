@@ -24,7 +24,20 @@ continuity concrete while pointing at a broader pattern for cumulative cognition
 - Added a case study with 5 stakeholders and 3 preserved tensions
 - Added a deterministic runtime that writes state, graph, reflection, continuation, and summary artifacts
 - Added committed sample output from one run, including 28 rationale graph edges
-- Added a state contract, adaptation guide, and future development notes
+- Added a state contract, adaptation guide, integration guide, and future development notes
+
+## What The Runtime Does
+
+The runtime is a fixture-backed demonstrator. It does real file generation, but it reads committed
+sample inputs instead of live Symphony run traces.
+
+That is deliberate. The branch proves the artifact shape first:
+
+- what state should be preserved
+- how rationale should be connected
+- what a reviewer should inspect
+- where a continuation run should begin
+- where real harness integration could attach
 
 ## Reader Path
 
@@ -32,6 +45,7 @@ continuity concrete while pointing at a broader pattern for cumulative cognition
 2. Inspect [sample-output/](examples/cognitive-harness/sample-output/) to see one generated run.
 3. Run the demo locally.
 4. Use [ADAPT.md](examples/cognitive-harness/ADAPT.md) to apply the harness shape to your own workflow.
+5. Use [INTEGRATE.md](examples/cognitive-harness/INTEGRATE.md) to see where it could live in a real harness.
 
 Run it from the repo root:
 

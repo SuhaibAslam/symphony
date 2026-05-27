@@ -149,6 +149,23 @@ Weak fits:
 To adapt it, replace the fixtures and keep the generated artifact contract stable. Start with
 [ADAPT.md](examples/cognitive-harness/ADAPT.md).
 
+## How To Integrate It
+
+The current runtime is a demonstrator. It uses fixture data so the artifact shape is easy to inspect.
+
+In a real Symphony or Codex harness, those fixtures would be replaced by live sources:
+
+- issue or project brief for the inquiry
+- `WORKFLOW.md`, `AGENTS.md`, or repo harness docs for the constitution
+- tests, logs, traces, review comments, failed attempts, and agent notes for signals
+
+The natural place for this layer is inside the workspace. A later run can load
+`COGNITIVE_STATE.json`, and a reviewer can inspect `REFLECTION_REPORT.md` before deciding whether
+the work is ready.
+
+See [INTEGRATE.md](examples/cognitive-harness/INTEGRATE.md) for a practical repository layout and
+lifecycle wiring.
+
 ## Future Development
 
 The current branch is a working slice. Useful next steps:
@@ -178,6 +195,17 @@ This branch is designed to be easy to inspect:
 - runtime shows the state transformation
 - sample output shows the end state
 - adaptation notes show how to make it your own
+- integration notes show where it could live in a real harness
 
 That keeps the contribution concrete while leaving room for discussion about where this layer should
 live in the broader Codex and Symphony ecosystem.
+
+## Useful Review Threads
+
+If this branch starts a discussion, useful review questions are:
+
+- Is the artifact contract the right level of abstraction?
+- Should the state live inside each workspace, in a shared store, or both?
+- Which lifecycle hook should update reflection state?
+- Should `WORKFLOW.md` own cognition policy, or should that live in a separate harness doc?
+- Which generated artifacts would be most useful to show in Symphony review output?

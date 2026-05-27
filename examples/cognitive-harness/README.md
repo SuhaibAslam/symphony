@@ -68,6 +68,8 @@ For the state contract, read `SPEC.md`.
 
 For guidance on making your own version, read `ADAPT.md`.
 
+For guidance on wiring this into a real harness, read `INTEGRATE.md`.
+
 For generated artifacts from one run, read `sample-output/`.
 
 ![Cognitive Harness sample output preview](media/sample-output-preview.svg)
@@ -129,6 +131,7 @@ examples/cognitive-harness/
   CASE_STUDY.md
   SPEC.md
   ADAPT.md
+  INTEGRATE.md
   runtime.mjs
   fixtures/
     constitution.json
