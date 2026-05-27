@@ -12,51 +12,10 @@ The concrete demo lives under:
 examples/cognitive-harness/
 ```
 
-```mermaid
-flowchart TB
-    n_work["Tracked work<br/>Issue, task, or project request"] --> n_workspace["Isolated workspace<br/>Files, hooks, retries, logs"]
-    n_workflow["Workflow policy<br/>WORKFLOW.md and repo guidance"] --> n_workspace
-    n_workspace --> n_codex["Codex run<br/>Implementation pass"]
-    n_codex --> n_normal["Normal run output<br/>Diffs, tests, summaries, review evidence"]
+![Cognitive Harness overview](examples/cognitive-harness/media/cognitive-harness-overview.png)
 
-    n_workspace --> n_harness["Cognitive Harness layer"]
-    n_codex --> n_harness
-
-    subgraph sg_harness_detail["What the harness preserves"]
-        n_inquiry["Bounded inquiry<br/>Problem, stakeholders, tensions"]
-        n_constitution["Workspace constitution<br/>Policy, archetypes, constraints"]
-        n_signals["Signals<br/>Evidence, rejected directions, risks"]
-        n_state["Cognitive state<br/>Stable decisions and open questions"]
-        n_rationale["Rationale graph<br/>Why things connect"]
-        n_reflection["Reflection report<br/>Human review surface"]
-        n_continuation["Continuation prompt<br/>Warm start for the next run"]
-    end
-
-    n_harness --> n_inquiry
-    n_harness --> n_constitution
-    n_harness --> n_signals
-    n_inquiry --> n_state
-    n_constitution --> n_state
-    n_signals --> n_rationale
-    n_state --> n_reflection
-    n_rationale --> n_reflection
-    n_state --> n_continuation
-    n_rationale --> n_continuation
-
-    n_reflection --> n_reviewer["Reviewer<br/>Inspect judgment"]
-    n_continuation --> n_retry["Retry or later run<br/>Resume with context"]
-    n_normal --> n_reviewer
-
-    classDef c_substrate fill:#eef6ff,stroke:#2563eb,color:#172554,stroke-width:1px
-    classDef c_harness fill:#f5f3ff,stroke:#7c3aed,color:#2e1065,stroke-width:1px
-    classDef c_artifact fill:#ecfdf5,stroke:#059669,color:#064e3b,stroke-width:1px
-    classDef c_human fill:#fff7ed,stroke:#ea580c,color:#7c2d12,stroke-width:1px
-
-    class n_work,n_workspace,n_workflow,n_codex,n_normal c_substrate
-    class n_harness,n_inquiry,n_constitution,n_signals c_harness
-    class n_state,n_rationale,n_reflection,n_continuation c_artifact
-    class n_reviewer,n_retry c_human
-```
+Conceptual view: Symphony supplies the execution substrate. Cognitive Harness adds a workspace-local
+layer for inquiry, policy, evidence, rationale, reflection, and continuation.
 
 ## The Problem
 
