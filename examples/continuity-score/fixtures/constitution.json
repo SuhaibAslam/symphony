@@ -1,6 +1,6 @@
 {
-  "id": "cognitive-scaffolding-v1",
-  "name": "Cognitive Scaffolding Runtime",
+  "id": "continuity-score-v1",
+  "name": "Continuity Score",
   "memory": {
     "preserve": [
       "decisions",

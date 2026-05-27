@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1120" height="560" viewBox="0 0 1120 560" role="img" aria-labelledby="title desc">
+  <title id="title">Continuity Score sample output preview</title>
+  <desc id="desc">A preview of generated Continuity Score artifacts and key counts from the sample run.</desc>
+  <rect width="1120" height="560" fill="#f5f7f3"/>
+  <rect x="56" y="52" width="1008" height="456" rx="16" fill="#ffffff" stroke="#22252a" stroke-width="2"/>
+  <text x="92" y="108" font-family="Inter, Arial, sans-serif" font-size="30" font-weight="700" fill="#22252a">Sample run output</text>
+  <text x="92" y="142" font-family="Inter, Arial, sans-serif" font-size="17" fill="#4f5965">Committed artifacts show the handoff state without running Node locally.</text>
+
+  <g font-family="Inter, Arial, sans-serif">
+    <rect x="92" y="190" width="298" height="238" rx="12" fill="#f8fafc" stroke="#c6ccd4"/>
+    <text x="122" y="232" font-size="19" font-weight="700" fill="#1f2933">Generated files</text>
+    <text x="122" y="269" font-size="15" fill="#334155">CONTINUITY_STATE.json</text>
+    <text x="122" y="298" font-size="15" fill="#334155">RATIONALE_GRAPH.json</text>
+    <text x="122" y="327" font-size="15" fill="#334155">REFLECTION_REPORT.md</text>
+    <text x="122" y="356" font-size="15" fill="#334155">CONTINUATION_PROMPT.md</text>
+    <text x="122" y="385" font-size="15" fill="#334155">RUN_SUMMARY.json</text>
+
+    <rect x="430" y="190" width="300" height="238" rx="12" fill="#fff8e6" stroke="#d3ae45"/>
+    <text x="460" y="232" font-size="19" font-weight="700" fill="#3d3216">Key counts</text>
+    <text x="460" y="270" font-size="15" fill="#3f3b30">2 decisions preserved</text>
+    <text x="460" y="300" font-size="15" fill="#3f3b30">3 tensions preserved</text>
+    <text x="460" y="330" font-size="15" fill="#3f3b30">5 open questions preserved</text>
+    <text x="460" y="360" font-size="15" fill="#3f3b30">28 rationale graph edges</text>
+
+    <rect x="770" y="190" width="258" height="238" rx="12" fill="#ecf7f1" stroke="#7bb08d"/>
+    <text x="800" y="232" font-size="19" font-weight="700" fill="#22452f">Next move</text>
+    <text x="800" y="270" font-size="15" fill="#263c30">Review active tensions</text>
+    <text x="800" y="300" font-size="15" fill="#263c30">Assign open questions</text>
+    <text x="800" y="330" font-size="15" fill="#263c30">Update graph before handoff</text>
+  </g>
+</svg>

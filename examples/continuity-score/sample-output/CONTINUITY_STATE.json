@@ -6,7 +6,7 @@
     "domain": "product-design"
   },
   "constitution": {
-    "id": "cognitive-scaffolding-v1",
+    "id": "continuity-score-v1",
     "archetypes": [
       "explorer",
       "critic",
@@ -201,7 +201,7 @@
     "preserve_ambiguity": true
   },
   "metadata": {
-    "producer": "cognitive-scaffolding-runtime-demo",
+    "producer": "continuity-score-demo",
     "prior_memory_loaded": false
   }
 }

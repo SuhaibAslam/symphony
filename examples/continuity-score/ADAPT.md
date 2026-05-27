@@ -73,12 +73,12 @@ Each observation can carry tags. Tags activate tensions.
 ## 5. Run The Demo
 
 ```bash
-node examples/cognitive-scaffolding-runtime/runtime.mjs
+node examples/continuity-score/runtime.mjs
 ```
 
 Read the generated files:
 
-- `generated-workspace/COGNITIVE_STATE.json`
+- `generated-workspace/CONTINUITY_STATE.json`
 - `generated-workspace/RATIONALE_GRAPH.json`
 - `generated-workspace/REFLECTION_REPORT.md`
 - `generated-workspace/CONTINUATION_PROMPT.md`
@@ -96,4 +96,4 @@ Can a reviewer see what still needs judgment?
 Can the next prompt start from state instead of from scratch?
 ```
 
-If the answer is yes, the scaffold is doing its job.
+If the answer is yes, the score is doing its job.

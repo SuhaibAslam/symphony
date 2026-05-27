@@ -1,21 +1,39 @@
-# Branch Demo: Cognitive Scaffolding Runtime
+# Continuity Score
 
-This fork branch adds a self-contained demo for cumulative reasoning inside a Symphony-style
-workspace.
+Branch demo for Symphony workspace continuity.
 
-Start here:
+Symphony is already good at turning tracked work into isolated agent runs.
 
-- [Branch overview](COGNITIVE_SCAFFOLDING_RUNTIME.md)
-- [Runnable demo](examples/cognitive-scaffolding-runtime/)
-- [Case study](examples/cognitive-scaffolding-runtime/CASE_STUDY.md)
-- [State contract](examples/cognitive-scaffolding-runtime/SPEC.md)
-- [Adaptation guide](examples/cognitive-scaffolding-runtime/ADAPT.md)
-- [Sample output](examples/cognitive-scaffolding-runtime/sample-output/)
+The handoff is the fragile part. When a run stops, retries, or needs human review, the next run
+needs more than raw logs. It needs to know what stabilized, what was rejected, which tensions still
+matter, and where to begin.
 
-Run it:
+This branch explores a compact answer: **Continuity Score**, a small state layer for cumulative
+reasoning inside a Symphony-style workspace.
+
+![Continuity Score flow](examples/continuity-score/media/continuity-score-flow.svg)
+
+## What You Will See
+
+- A runnable example under `examples/continuity-score/`
+- A product onboarding case study with 5 stakeholders and 3 preserved tensions
+- A deterministic runtime that writes state, graph, reflection, continuation, and summary artifacts
+- Committed sample output from one run, including 28 rationale graph edges
+- A state contract and adaptation guide so the pattern can be reused
+
+## Start Here
+
+- [Branch overview](CONTINUITY_SCORE.md)
+- [Runnable demo](examples/continuity-score/)
+- [Case study](examples/continuity-score/CASE_STUDY.md)
+- [State contract](examples/continuity-score/SPEC.md)
+- [Adaptation guide](examples/continuity-score/ADAPT.md)
+- [Sample output](examples/continuity-score/sample-output/)
+
+Run it from the repo root:
 
 ```bash
-node examples/cognitive-scaffolding-runtime/runtime.mjs
+node examples/continuity-score/runtime.mjs
 ```
 
 The original Symphony README continues below.

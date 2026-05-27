@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1120" height="520" viewBox="0 0 1120 520" role="img" aria-labelledby="title desc">
+  <title id="title">Continuity Score flow</title>
+  <desc id="desc">A Symphony workspace receives an inquiry and signals, writes continuity artifacts, then starts the next run warm.</desc>
+  <rect width="1120" height="520" fill="#f7f4ee"/>
+  <rect x="48" y="48" width="1024" height="424" rx="18" fill="#fffdf8" stroke="#22252a" stroke-width="2"/>
+  <text x="82" y="104" font-family="Inter, Arial, sans-serif" font-size="34" font-weight="700" fill="#22252a">Continuity Score</text>
+  <text x="82" y="140" font-family="Inter, Arial, sans-serif" font-size="17" fill="#4e5661">A small state layer for Symphony-style workspaces that need clean handoffs between runs.</text>
+
+  <g font-family="Inter, Arial, sans-serif">
+    <rect x="82" y="206" width="210" height="126" rx="12" fill="#e7f0ff" stroke="#315f9c" stroke-width="1.5"/>
+    <text x="112" y="244" font-size="20" font-weight="700" fill="#16365f">Inputs</text>
+    <text x="112" y="276" font-size="15" fill="#263442">Inquiry</text>
+    <text x="112" y="300" font-size="15" fill="#263442">Constitution</text>
+    <text x="112" y="324" font-size="15" fill="#263442">Signals</text>
+
+    <path d="M304 269 H390" stroke="#22252a" stroke-width="2.5" fill="none"/>
+    <path d="M390 269 l-12 -8 v16 z" fill="#22252a"/>
+
+    <rect x="408" y="186" width="300" height="166" rx="12" fill="#f1ead7" stroke="#8a6a22" stroke-width="1.5"/>
+    <text x="444" y="229" font-size="20" font-weight="700" fill="#4b3b13">Workspace pass</text>
+    <text x="444" y="263" font-size="15" fill="#3f3b30">Preserve decisions</text>
+    <text x="444" y="287" font-size="15" fill="#3f3b30">Keep tensions visible</text>
+    <text x="444" y="311" font-size="15" fill="#3f3b30">Prepare continuation</text>
+
+    <path d="M720 269 H806" stroke="#22252a" stroke-width="2.5" fill="none"/>
+    <path d="M806 269 l-12 -8 v16 z" fill="#22252a"/>
+
+    <rect x="824" y="176" width="214" height="186" rx="12" fill="#e9f5ec" stroke="#34724c" stroke-width="1.5"/>
+    <text x="856" y="219" font-size="20" font-weight="700" fill="#1d4a32">Artifacts</text>
+    <text x="856" y="253" font-size="15" fill="#263c30">Continuity state</text>
+    <text x="856" y="277" font-size="15" fill="#263c30">Rationale graph</text>
+    <text x="856" y="301" font-size="15" fill="#263c30">Reflection report</text>
+    <text x="856" y="325" font-size="15" fill="#263c30">Continuation prompt</text>
+
+    <path d="M931 374 C931 432 200 432 200 348" stroke="#6a4fb3" stroke-width="2.5" fill="none"/>
+    <path d="M200 348 l-8 12 h16 z" fill="#6a4fb3"/>
+    <text x="420" y="450" font-size="16" font-weight="700" fill="#4d368c">Next run starts from preserved state</text>
+  </g>
+</svg>

@@ -1,4 +1,4 @@
-# Cognitive Scaffolding Runtime
+# Continuity Score
 
 A small, dependency-free demo for cumulative reasoning inside a persistent Symphony-style
 workspace.
@@ -7,6 +7,8 @@ The demo runs a product onboarding inquiry through a tiny state machine. It writ
 file, a rationale graph, a reflection report, a continuation prompt, and a run summary.
 
 Everything is local. No model call, no API key, no database, no service setup.
+
+![Continuity Score flow](media/continuity-score-flow.svg)
 
 ## Why This Exists
 
@@ -37,18 +39,18 @@ The answer here is deliberately small:
 From the repository root:
 
 ```bash
-node examples/cognitive-scaffolding-runtime/runtime.mjs
+node examples/continuity-score/runtime.mjs
 ```
 
 The script reads fixtures and writes generated artifacts under:
 
 ```text
-examples/cognitive-scaffolding-runtime/generated-workspace/
+examples/continuity-score/generated-workspace/
 ```
 
 Generated artifacts:
 
-- `COGNITIVE_STATE.json`
+- `CONTINUITY_STATE.json`
 - `RATIONALE_GRAPH.json`
 - `REFLECTION_REPORT.md`
 - `CONTINUATION_PROMPT.md`
@@ -65,10 +67,10 @@ For generated artifacts from one run, read `sample-output/`.
 ## Example Output
 
 ```text
-Cognitive scaffolding pass complete
+Continuity Score pass complete
 
 Generated artifacts:
-- generated-workspace/COGNITIVE_STATE.json
+- generated-workspace/CONTINUITY_STATE.json
 - generated-workspace/RATIONALE_GRAPH.json
 - generated-workspace/REFLECTION_REPORT.md
 - generated-workspace/CONTINUATION_PROMPT.md
@@ -97,13 +99,13 @@ Run a focused review of the active tensions before selecting a primary concept d
 Reset generated output:
 
 ```bash
-node examples/cognitive-scaffolding-runtime/runtime.mjs --reset
+node examples/continuity-score/runtime.mjs --reset
 ```
 
 ## Folder Structure
 
 ```text
-examples/cognitive-scaffolding-runtime/
+examples/continuity-score/
   README.md
   CASE_STUDY.md
   SPEC.md
@@ -114,11 +116,14 @@ examples/cognitive-scaffolding-runtime/
     inquiry.json
     signals.json
   sample-output/
-    COGNITIVE_STATE.json
+    CONTINUITY_STATE.json
     RATIONALE_GRAPH.json
     REFLECTION_REPORT.md
     CONTINUATION_PROMPT.md
     RUN_SUMMARY.json
+  media/
+    continuity-score-flow.svg
+    sample-output-preview.svg
   generated-workspace/
     .gitignore
     .gitkeep
@@ -140,7 +145,7 @@ examples/cognitive-scaffolding-runtime/
 
 The runtime writes 5 artifacts:
 
-- `COGNITIVE_STATE.json`: compact state for the next run
+- `CONTINUITY_STATE.json`: compact state for the next run
 - `RATIONALE_GRAPH.json`: evidence, decisions, tensions, questions, and risks as nodes and edges
 - `REFLECTION_REPORT.md`: human-readable review surface
 - `CONTINUATION_PROMPT.md`: warm-start prompt for a later run
