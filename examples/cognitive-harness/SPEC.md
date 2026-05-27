@@ -1,4 +1,4 @@
-# Continuity Score Spec
+# Cognitive Harness Spec
 
 This spec describes the demo contract. It is small on purpose.
 
@@ -60,7 +60,7 @@ tests, traces, or review comments.
 
 ## Outputs
 
-### `CONTINUITY_STATE.json`
+### `COGNITIVE_STATE.json`
 
 The compact state for the next run.
 
@@ -137,7 +137,7 @@ Use it to inspect the end state without running Node locally.
 ## Runtime Rules
 
 1. Read the inputs.
-2. Load prior `CONTINUITY_STATE.json` when present.
+2. Load prior `COGNITIVE_STATE.json` when present.
 3. Collect evidence from observations.
 4. Activate tensions from tags.
 5. Preserve decisions and rejected directions.

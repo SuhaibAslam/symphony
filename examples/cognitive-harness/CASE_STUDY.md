@@ -58,14 +58,14 @@ Simulated evidence: observations, rejected directions, open questions, and risks
 From the repository root:
 
 ```bash
-node examples/continuity-score/runtime.mjs
+node examples/cognitive-harness/runtime.mjs
 ```
 
 The runtime writes 5 generated artifacts under `generated-workspace/`.
 
 ## Artifact 1: Continuity State
 
-`CONTINUITY_STATE.json` is the compact state file.
+`COGNITIVE_STATE.json` is the compact state file.
 
 It preserves:
 

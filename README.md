@@ -1,21 +1,21 @@
-# Continuity Score
+# Cognitive Harness
 
-Branch demo for Symphony workspace continuity.
+Branch demo for structured reasoning inside Symphony-style workspaces.
 
 Symphony is already good at turning tracked work into isolated agent runs.
 
-The handoff is the fragile part. When a run stops, retries, or needs human review, the next run
+The fragile part is the handoff. When a run stops, retries, or needs human review, the next run
 needs more than raw logs. It needs to know what stabilized, what was rejected, which tensions still
 matter, and where to begin.
 
-This branch explores a compact answer: **Continuity Score**, a small state layer for cumulative
-reasoning inside a Symphony-style workspace.
+This branch proposes **Cognitive Harness**: a small working structure for bounded inquiry,
+workspace policy, preserved reasoning state, rationale, reflection, and continuation.
 
-![Continuity Score flow](examples/continuity-score/media/continuity-score-flow.svg)
+![Cognitive Harness flow](examples/cognitive-harness/media/cognitive-harness-flow.svg)
 
 ## What You Will See
 
-- A runnable example under `examples/continuity-score/`
+- A runnable example under `examples/cognitive-harness/`
 - A product onboarding case study with 5 stakeholders and 3 preserved tensions
 - A deterministic runtime that writes state, graph, reflection, continuation, and summary artifacts
 - Committed sample output from one run, including 28 rationale graph edges
@@ -23,17 +23,17 @@ reasoning inside a Symphony-style workspace.
 
 ## Start Here
 
-- [Branch overview](CONTINUITY_SCORE.md)
-- [Runnable demo](examples/continuity-score/)
-- [Case study](examples/continuity-score/CASE_STUDY.md)
-- [State contract](examples/continuity-score/SPEC.md)
-- [Adaptation guide](examples/continuity-score/ADAPT.md)
-- [Sample output](examples/continuity-score/sample-output/)
+- [Branch overview](COGNITIVE_HARNESS.md)
+- [Runnable demo](examples/cognitive-harness/)
+- [Case study](examples/cognitive-harness/CASE_STUDY.md)
+- [State contract](examples/cognitive-harness/SPEC.md)
+- [Adaptation guide](examples/cognitive-harness/ADAPT.md)
+- [Sample output](examples/cognitive-harness/sample-output/)
 
 Run it from the repo root:
 
 ```bash
-node examples/continuity-score/runtime.mjs
+node examples/cognitive-harness/runtime.mjs
 ```
 
 The original Symphony README continues below.

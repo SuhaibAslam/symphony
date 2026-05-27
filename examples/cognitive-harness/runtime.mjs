@@ -12,7 +12,7 @@ const files = {
   constitution: path.join(fixturePath, "constitution.json"),
   inquiry: path.join(fixturePath, "inquiry.json"),
   signals: path.join(fixturePath, "signals.json"),
-  memory: path.join(workspacePath, "CONTINUITY_STATE.json"),
+  memory: path.join(workspacePath, "COGNITIVE_STATE.json"),
   graph: path.join(workspacePath, "RATIONALE_GRAPH.json"),
   reflection: path.join(workspacePath, "REFLECTION_REPORT.md"),
   continuation: path.join(workspacePath, "CONTINUATION_PROMPT.md"),
@@ -41,7 +41,7 @@ writeTextAtomic(files.reflection, renderReflectionReport(pass));
 writeTextAtomic(files.continuation, renderContinuationPrompt(pass));
 writeJsonAtomic(files.summary, pass.summary);
 
-console.log("Continuity Score pass complete");
+console.log("Cognitive Harness pass complete");
 console.log("");
 console.log("Generated artifacts:");
 for (const file of [files.memory, files.graph, files.reflection, files.continuation, files.summary]) {
@@ -91,7 +91,7 @@ function runCognitionPass({ constitution, inquiry, signals, priorMemory }) {
     next_actions: nextActions,
     reflection_policy: constitution.reflection,
     metadata: {
-      producer: "continuity-score-demo",
+      producer: "cognitive-harness-demo",
       prior_memory_loaded: Boolean(priorMemory)
     }
   };
@@ -99,7 +99,7 @@ function runCognitionPass({ constitution, inquiry, signals, priorMemory }) {
   const summary = {
     inquiry_id: inquiry.id,
     generated_at: signals.observed_at,
-    memory_path: "generated-workspace/CONTINUITY_STATE.json",
+    memory_path: "generated-workspace/COGNITIVE_STATE.json",
     graph_path: "generated-workspace/RATIONALE_GRAPH.json",
     reflection_path: "generated-workspace/REFLECTION_REPORT.md",
     continuation_path: "generated-workspace/CONTINUATION_PROMPT.md",

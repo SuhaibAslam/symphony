@@ -6,7 +6,7 @@
     "domain": "product-design"
   },
   "constitution": {
-    "id": "continuity-score-v1",
+    "id": "cognitive-harness-v1",
     "archetypes": [
       "explorer",
       "critic",
@@ -201,7 +201,7 @@
     "preserve_ambiguity": true
   },
   "metadata": {
-    "producer": "continuity-score-demo",
+    "producer": "cognitive-harness-demo",
     "prior_memory_loaded": false
   }
 }

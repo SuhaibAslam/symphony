@@ -1,6 +1,6 @@
 {
-  "id": "continuity-score-v1",
-  "name": "Continuity Score",
+  "id": "cognitive-harness-v1",
+  "name": "Cognitive Harness",
   "memory": {
     "preserve": [
       "decisions",

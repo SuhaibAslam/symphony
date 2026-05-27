@@ -1,15 +1,15 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1120" height="560" viewBox="0 0 1120 560" role="img" aria-labelledby="title desc">
-  <title id="title">Continuity Score sample output preview</title>
-  <desc id="desc">A preview of generated Continuity Score artifacts and key counts from the sample run.</desc>
+  <title id="title">Cognitive Harness sample output preview</title>
+  <desc id="desc">A preview of generated Cognitive Harness artifacts and key counts from the sample run.</desc>
   <rect width="1120" height="560" fill="#f5f7f3"/>
   <rect x="56" y="52" width="1008" height="456" rx="16" fill="#ffffff" stroke="#22252a" stroke-width="2"/>
   <text x="92" y="108" font-family="Inter, Arial, sans-serif" font-size="30" font-weight="700" fill="#22252a">Sample run output</text>
-  <text x="92" y="142" font-family="Inter, Arial, sans-serif" font-size="17" fill="#4f5965">Committed artifacts show the handoff state without running Node locally.</text>
+  <text x="92" y="142" font-family="Inter, Arial, sans-serif" font-size="17" fill="#4f5965">Committed artifacts show preserved reasoning state without running Node locally.</text>
 
   <g font-family="Inter, Arial, sans-serif">
     <rect x="92" y="190" width="298" height="238" rx="12" fill="#f8fafc" stroke="#c6ccd4"/>
     <text x="122" y="232" font-size="19" font-weight="700" fill="#1f2933">Generated files</text>
-    <text x="122" y="269" font-size="15" fill="#334155">CONTINUITY_STATE.json</text>
+    <text x="122" y="269" font-size="15" fill="#334155">COGNITIVE_STATE.json</text>
     <text x="122" y="298" font-size="15" fill="#334155">RATIONALE_GRAPH.json</text>
     <text x="122" y="327" font-size="15" fill="#334155">REFLECTION_REPORT.md</text>
     <text x="122" y="356" font-size="15" fill="#334155">CONTINUATION_PROMPT.md</text>

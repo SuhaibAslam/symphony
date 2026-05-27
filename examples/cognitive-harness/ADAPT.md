@@ -73,12 +73,12 @@ Each observation can carry tags. Tags activate tensions.
 ## 5. Run The Demo
 
 ```bash
-node examples/continuity-score/runtime.mjs
+node examples/cognitive-harness/runtime.mjs
 ```
 
 Read the generated files:
 
-- `generated-workspace/CONTINUITY_STATE.json`
+- `generated-workspace/COGNITIVE_STATE.json`
 - `generated-workspace/RATIONALE_GRAPH.json`
 - `generated-workspace/REFLECTION_REPORT.md`
 - `generated-workspace/CONTINUATION_PROMPT.md`

@@ -1,27 +1,26 @@
-# Continuity Score
+# Cognitive Harness
 
-A small, dependency-free demo for cumulative reasoning inside a persistent Symphony-style
-workspace.
+A dependency-free demo for structured reasoning inside a persistent Symphony-style workspace.
 
-The demo runs a product onboarding inquiry through a tiny state machine. It writes a compact state
-file, a rationale graph, a reflection report, a continuation prompt, and a run summary.
+The demo runs a product onboarding inquiry through a tiny state machine. It writes preserved
+cognitive state, a rationale graph, a reflection report, a continuation prompt, and a run summary.
 
 Everything is local. No model call, no API key, no database, no service setup.
 
-![Continuity Score flow](media/continuity-score-flow.svg)
+![Cognitive Harness flow](media/cognitive-harness-flow.svg)
 
 ## Why This Exists
 
 Symphony already has useful bones: isolated workspaces, lifecycle hooks, retries, continuation, and
 observability.
 
-This demo asks a narrow question:
+This demo asks a practical question:
 
 ```text
-What state should live inside a workspace so the next run can pick up the reasoning and start warm?
+What structure should live inside a workspace so the next run can pick up the reasoning and start warm?
 ```
 
-The answer here is deliberately small:
+The answer here is deliberately inspectable:
 
 - a bounded inquiry
 - a constitution for the workspace
@@ -39,18 +38,18 @@ The answer here is deliberately small:
 From the repository root:
 
 ```bash
-node examples/continuity-score/runtime.mjs
+node examples/cognitive-harness/runtime.mjs
 ```
 
 The script reads fixtures and writes generated artifacts under:
 
 ```text
-examples/continuity-score/generated-workspace/
+examples/cognitive-harness/generated-workspace/
 ```
 
 Generated artifacts:
 
-- `CONTINUITY_STATE.json`
+- `COGNITIVE_STATE.json`
 - `RATIONALE_GRAPH.json`
 - `REFLECTION_REPORT.md`
 - `CONTINUATION_PROMPT.md`
@@ -67,10 +66,10 @@ For generated artifacts from one run, read `sample-output/`.
 ## Example Output
 
 ```text
-Continuity Score pass complete
+Cognitive Harness pass complete
 
 Generated artifacts:
-- generated-workspace/CONTINUITY_STATE.json
+- generated-workspace/COGNITIVE_STATE.json
 - generated-workspace/RATIONALE_GRAPH.json
 - generated-workspace/REFLECTION_REPORT.md
 - generated-workspace/CONTINUATION_PROMPT.md
@@ -99,13 +98,13 @@ Run a focused review of the active tensions before selecting a primary concept d
 Reset generated output:
 
 ```bash
-node examples/continuity-score/runtime.mjs --reset
+node examples/cognitive-harness/runtime.mjs --reset
 ```
 
 ## Folder Structure
 
 ```text
-examples/continuity-score/
+examples/cognitive-harness/
   README.md
   CASE_STUDY.md
   SPEC.md
@@ -116,13 +115,13 @@ examples/continuity-score/
     inquiry.json
     signals.json
   sample-output/
-    CONTINUITY_STATE.json
+    COGNITIVE_STATE.json
     RATIONALE_GRAPH.json
     REFLECTION_REPORT.md
     CONTINUATION_PROMPT.md
     RUN_SUMMARY.json
   media/
-    continuity-score-flow.svg
+    cognitive-harness-flow.svg
     sample-output-preview.svg
   generated-workspace/
     .gitignore
@@ -145,7 +144,7 @@ examples/continuity-score/
 
 The runtime writes 5 artifacts:
 
-- `CONTINUITY_STATE.json`: compact state for the next run
+- `COGNITIVE_STATE.json`: preserved inquiry state for the next run
 - `RATIONALE_GRAPH.json`: evidence, decisions, tensions, questions, and risks as nodes and edges
 - `REFLECTION_REPORT.md`: human-readable review surface
 - `CONTINUATION_PROMPT.md`: warm-start prompt for a later run

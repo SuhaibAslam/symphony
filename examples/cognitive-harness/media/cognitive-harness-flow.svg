@@ -1,10 +1,10 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1120" height="520" viewBox="0 0 1120 520" role="img" aria-labelledby="title desc">
-  <title id="title">Continuity Score flow</title>
-  <desc id="desc">A Symphony workspace receives an inquiry and signals, writes continuity artifacts, then starts the next run warm.</desc>
+  <title id="title">Cognitive Harness flow</title>
+  <desc id="desc">A Symphony workspace receives an inquiry and signals, writes cognitive harness artifacts, then starts the next run warm.</desc>
   <rect width="1120" height="520" fill="#f7f4ee"/>
   <rect x="48" y="48" width="1024" height="424" rx="18" fill="#fffdf8" stroke="#22252a" stroke-width="2"/>
-  <text x="82" y="104" font-family="Inter, Arial, sans-serif" font-size="34" font-weight="700" fill="#22252a">Continuity Score</text>
-  <text x="82" y="140" font-family="Inter, Arial, sans-serif" font-size="17" fill="#4e5661">A small state layer for Symphony-style workspaces that need clean handoffs between runs.</text>
+  <text x="82" y="104" font-family="Inter, Arial, sans-serif" font-size="34" font-weight="700" fill="#22252a">Cognitive Harness</text>
+  <text x="82" y="140" font-family="Inter, Arial, sans-serif" font-size="17" fill="#4e5661">A working structure for inquiry, policy, state, rationale, reflection, and continuation.</text>
 
   <g font-family="Inter, Arial, sans-serif">
     <rect x="82" y="206" width="210" height="126" rx="12" fill="#e7f0ff" stroke="#315f9c" stroke-width="1.5"/>
@@ -27,7 +27,7 @@
 
     <rect x="824" y="176" width="214" height="186" rx="12" fill="#e9f5ec" stroke="#34724c" stroke-width="1.5"/>
     <text x="856" y="219" font-size="20" font-weight="700" fill="#1d4a32">Artifacts</text>
-    <text x="856" y="253" font-size="15" fill="#263c30">Continuity state</text>
+    <text x="856" y="253" font-size="15" fill="#263c30">Cognitive state</text>
     <text x="856" y="277" font-size="15" fill="#263c30">Rationale graph</text>
     <text x="856" y="301" font-size="15" fill="#263c30">Reflection report</text>
     <text x="856" y="325" font-size="15" fill="#263c30">Continuation prompt</text>
