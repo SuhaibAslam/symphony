@@ -77,6 +77,10 @@ Suggested lifecycle:
 5. Before human review, publish `REFLECTION_REPORT.md`.
 6. After review, update decisions, open questions, and rejected directions.
 
+The same lifecycle can feed a UI without changing the orchestration contract. A board, dashboard,
+or issue detail page can keep its normal operational status while rendering a Cognitive Handoff
+panel from the generated workspace artifacts. See `UI_CONCEPT.md` for the suggested review surface.
+
 ## What To Keep Stable
 
 Keep these artifacts stable so tools and agents can rely on them:

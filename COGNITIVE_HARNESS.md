@@ -17,6 +17,16 @@ examples/cognitive-harness/
 Conceptual view: Symphony supplies the execution substrate. Cognitive Harness adds a workspace-local
 layer for inquiry, policy, evidence, rationale, reflection, and continuation.
 
+The UI angle is intentionally downstream of that artifact shape:
+
+```text
+kanban card shows where the work is
+cognitive handoff shows what the work now knows
+```
+
+See [UI_CONCEPT.md](examples/cognitive-harness/UI_CONCEPT.md) for a mockup and review-surface
+model.
+
 ## The Problem
 
 Agent runs produce more than code and logs. They also produce working judgment:
@@ -179,7 +189,9 @@ If you are reading this as a Symphony or Codex maintainer, the fastest review pa
    surface before running anything locally.
 3. Read [INTEGRATE.md](examples/cognitive-harness/INTEGRATE.md) to judge where the layer could
    attach to real workspace lifecycle events.
-4. Read [SPEC.md](examples/cognitive-harness/SPEC.md) if the artifact contract feels worth
+4. Read [UI_CONCEPT.md](examples/cognitive-harness/UI_CONCEPT.md) to see how the artifacts could
+   appear as a per-issue Cognitive Handoff surface.
+5. Read [SPEC.md](examples/cognitive-harness/SPEC.md) if the artifact contract feels worth
    standardizing.
 
 The branch can be split into smaller upstreamable pieces:
@@ -200,6 +212,7 @@ The current branch is a working slice. Useful next steps:
 - Add lifecycle hooks that update `COGNITIVE_STATE.json` after failure, handoff, or review.
 - Add schema validation for state and graph artifacts.
 - Render the rationale graph as an interactive review surface.
+- Prototype a Cognitive Handoff drawer against the generated artifacts.
 - Compare multiple runs to detect repeated failures or recurring tensions.
 - Explore whether `WORKFLOW.md` should expose cognition policy directly.
 

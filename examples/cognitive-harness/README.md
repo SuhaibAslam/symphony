@@ -73,12 +73,34 @@ For guidance on making your own version, read `ADAPT.md`.
 
 For guidance on wiring this into a real harness, read `INTEGRATE.md`.
 
+For the operator-facing UI angle, read `UI_CONCEPT.md`.
+
 For generated artifacts from one run, read `sample-output/`.
 
 ![Cognitive Harness artifact bundle](media/cognitive-harness-artifacts.png)
 
 Output view: the generated bundle separates reviewer-facing judgment from next-run continuity. The
 sample run preserves 2 decisions, 3 tensions, 5 open questions, and 28 rationale graph edges.
+
+## Review Surface
+
+The artifacts are intentionally shaped so they can feed a review UI without changing Symphony's
+tracker workflow.
+
+The core product pattern is:
+
+```text
+kanban card shows where the work is
+cognitive handoff shows what the work now knows
+```
+
+![Cognitive Handoff UI mockup](media/cognitive-handoff-ui-mockup.png)
+
+The mockup keeps the normal issue-board overview and opens the selected work item into a Cognitive
+Handoff surface. That surface is downstream of the generated artifacts: state, rationale graph,
+reflection report, continuation prompt, and run summary.
+
+Read [UI_CONCEPT.md](UI_CONCEPT.md) for the interaction model and open UI questions.
 
 ## How To Read The Output
 
@@ -138,6 +160,7 @@ examples/cognitive-harness/
   SPEC.md
   ADAPT.md
   INTEGRATE.md
+  UI_CONCEPT.md
   runtime.mjs
   fixtures/
     constitution.json
@@ -152,6 +175,7 @@ examples/cognitive-harness/
   media/
     cognitive-harness-overview.png
     cognitive-harness-artifacts.png
+    cognitive-handoff-ui-mockup.png
   generated-workspace/
     .gitignore
     .gitkeep
@@ -198,4 +222,5 @@ It is a working state model. Small enough to inspect. Big enough to show the sha
 - Add schema validation for state and graph artifacts.
 - Write state from lifecycle hooks after failure, review, or handoff.
 - Visualize the rationale graph in a reviewer-friendly way.
+- Prototype the Cognitive Handoff surface from `UI_CONCEPT.md`.
 - Compare multiple runs to find recurring unresolved tensions.
