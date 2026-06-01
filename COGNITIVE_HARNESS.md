@@ -90,6 +90,26 @@ Related OpenAI framing:
 - [Symphony](https://github.com/openai/symphony) turns tracked project work into isolated implementation runs.
 - [Symphony SPEC.md](https://github.com/openai/symphony/blob/main/SPEC.md) defines the service boundary this demo builds beside.
 
+## Relationship To Harness Engineering
+
+OpenAI's harness engineering framing is the umbrella: give agents the right environment, tools,
+knowledge, feedback loops, and review surfaces.
+
+Cognitive Harness narrows that framing to one concrete question:
+
+```text
+What reasoning state should a workspace preserve so future runs and reviewers do not restart cold?
+```
+
+That makes this branch a small extension pattern, not a parallel framework. It focuses on the part
+of harness engineering where judgment becomes a repo-local artifact:
+
+- state that a later run should load
+- rationale that a reviewer should inspect
+- reflection that captures unresolved judgment
+- continuation prompts that start from accumulated context
+- schemas and lifecycle hooks that could make the pattern portable
+
 ## What The Demo Shows
 
 The case study is intentionally generic: a complex product onboarding inquiry.
